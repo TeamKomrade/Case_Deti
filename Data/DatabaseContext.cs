@@ -25,6 +25,15 @@ namespace Case_Deti.Data
 
             modelBuilder.Entity<ProfessionCategory>()
                 .HasKey(pc => new { pc.ProfessionID, pc.CategoryID });
+            //modelBuilder.Entity<ProfessionCategory>()
+            //    .HasOne<Profession>(pc => pc.Profession)
+            //    .WithMany(p => p.CategoryProfessions)
+            //    .HasForeignKey(pc => pc.ProfessionID);
+            //modelBuilder.Entity<ProfessionCategory>()
+            //    .HasOne<Category>(pc => pc.Category)
+            //    .WithMany(c => c.CategoryProfessions)
+            //    .HasForeignKey(pc => pc.CategoryID);
+
 
             modelBuilder.Entity<UserAchievements>()
                 .HasKey(ua => new { ua.UserID, ua.AchievementID });

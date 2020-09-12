@@ -60,16 +60,14 @@ namespace Case_Deti.Controllers
                     ProfessionID = 0
                 };
 
-                var profcategory = new Data.Category()
+                var category = new Data.Category()
                 {
                     ImgURL = @"https://sun9-29.userapi.com/1-WgAmlkOwd-1_sW7Wp_uUlWFEjHdkAsZLxiLg/JCI0QEBnKX8.jpg",
                     Name = "test cat",
                     CategoryID = 0
                 };
 
-                _db.Categories.Add(profcategory);
-                _db.Professions.Add(profession);
-                _db.ProfessionCategories.Add(new ProfessionCategory() { CategoryID = 0, ProfessionID = 0 });
+                _db.ProfessionCategories.Add(new ProfessionCategory() { Category = category, Profession = profession });
 
                 _db.Users.Add(admin);
                 await _db.SaveChangesAsync();
