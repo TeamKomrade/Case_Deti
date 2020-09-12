@@ -73,7 +73,7 @@ namespace Case_Deti.Controllers
 
         // GET: api/<ApiController>
         [HttpGet]
-        public async Task<IEnumerable<Category>> GetProfessions()
+        public async Task<IEnumerable<Category>> GetCategories()
         {
             return _db.Categories
                 .Include(p => p.CategoryProfessions)
@@ -86,6 +86,61 @@ namespace Case_Deti.Controllers
         public async Task<IEnumerable<Category>> Get(int id)
         {
             return _db.Categories.Where(c => c.CategoryID == id).ToArray();
+        }
+
+        // POST api/<ApiController>
+        [HttpPost]
+        public void Post([FromBody] string value)
+        {
+        }
+
+        // PUT api/<ApiController>/5
+        [HttpPut("{id}")]
+        public void Put(int id, [FromBody] string value)
+        {
+        }
+
+        // DELETE api/<ApiController>/5
+        [HttpDelete("{id}")]
+        public void Delete(int id)
+        {
+        }
+    }
+
+    [Route("api/[controller]")]
+    [ApiController]
+    public class CoursesController : ControllerBase
+    {
+        private readonly ILogger<CoursesController> _logger;
+        private readonly DetiContext _db;
+        public CoursesController(ILogger<CoursesController> logger, DetiContext context)
+        {
+            _logger = logger;
+            _db = context;
+        }
+
+        // GET: api/<ApiController>
+        [HttpGet]
+        public async Task<IEnumerable<Category>> GetCourses()
+        {
+            return _db.Courses.ToArray();
+        }
+
+        // GET api/<ApiController>/5
+        [HttpGet("{id}")]
+        public async Task<IEnumerable<Course>> GetRelatedCourses(int id)
+        {
+            //курсы под профессию
+            var prof = await _db.Professions
+                .Where(p => p.ProfessionID == id)
+                .Include(p => p.ProfessionCourses)
+                .ThenInclude(pc => pc.Course)
+                .FirstOrDefaultAsync();
+            if (prof == null) return null;
+
+            var courses = new List<Course>();
+            foreach (var pc in prof.ProfessionCourses) courses.Add(pc.Course);
+            return courses;
         }
 
         // POST api/<ApiController>

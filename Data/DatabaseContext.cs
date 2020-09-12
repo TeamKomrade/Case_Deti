@@ -25,15 +25,9 @@ namespace Case_Deti.Data
 
             modelBuilder.Entity<ProfessionCategory>()
                 .HasKey(pc => new { pc.ProfessionID, pc.CategoryID });
-            //modelBuilder.Entity<ProfessionCategory>()
-            //    .HasOne<Profession>(pc => pc.Profession)
-            //    .WithMany(p => p.CategoryProfessions)
-            //    .HasForeignKey(pc => pc.ProfessionID);
-            //modelBuilder.Entity<ProfessionCategory>()
-            //    .HasOne<Category>(pc => pc.Category)
-            //    .WithMany(c => c.CategoryProfessions)
-            //    .HasForeignKey(pc => pc.CategoryID);
 
+            modelBuilder.Entity<ProfessionCourse>()
+                .HasKey(pc => new { pc.ProfessionID, pc.CourseID });
 
             modelBuilder.Entity<UserAchievements>()
                 .HasKey(ua => new { ua.UserID, ua.AchievementID });
@@ -51,6 +45,7 @@ namespace Case_Deti.Data
         public DbSet<Profession> Professions { get; set; }
         public DbSet<ProfessionCategory> ProfessionCategories { get; set; }
         public DbSet<Course> Courses { get; set; }
+        public DbSet<ProfessionCourse> ProfessionCourses { get; set; }
         public DbSet<Schedule> Schedules { get; set; }
         public DbSet<Skill> Skills { get; set; }
         public DbSet<CourseSkills> CourseSkills { get; set; }
@@ -109,6 +104,7 @@ namespace Case_Deti.Data
         public string Name { get; set; }
         public string ImgURL { get; set; }
         public IList<ProfessionCategory> CategoryProfessions { get; set; }
+        public IList<ProfessionCourse> ProfessionCourses { get; set; }
     }
 
     public class ProfessionCategory
@@ -126,12 +122,20 @@ namespace Case_Deti.Data
         public string Info { get; set; }
         public string Address { get; set; }
         public string DifficultyLevel { get; set; }
+        public IList<ProfessionCourse> ProfessionCourses { get; set; }
         public IList<CourseSkills> CourseSkills { get; set; }
         public IList<Schedule> ScheduleList { get; set; }
         public string ApproxTime { get; set; }
         public string ImgURL { get; set; }
     }
 
+    public class ProfessionCourse
+    {
+        public int CourseID { get; set; }
+        public Course Course { get; set; }
+        public int ProfessionID { get; set; }
+        public Profession Profession { get; set; }
+    }
     public class Schedule
     {
         public int ScheduleID { get; set; }
