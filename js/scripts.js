@@ -192,3 +192,10 @@ function Update(){
 function TipVisible(vis){
     $('.tip').css("display",vis);
 }
+function startDirecting(){
+    $('.login_button').click(function(){
+        var startref = "./start.html"
+        $("body").fadeOut(1000);
+        redirectPage(startref);
+    });
+}

@@ -1,14 +1,13 @@
-function Update(){
+function UpdateLogin(){
     
     $('.sign_up').css("display","none");
     $(".sign_in").css("display","flex");
     
 }
 
-function Update2(){
+function UpdateReg(){
     
     $('.sign_up').css("display","flex");
     $(".sign_in").css("display","none");
     
 }
-

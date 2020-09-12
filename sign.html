@@ -5,14 +5,15 @@
     <meta charset="UTF-8">
     <title>ХакаЧто?</title>
     <script src="js/signscript.js"></script>
+    <script src="js/scripts.js"></script>
     <script src="js/jquery-3.5.1.js"></script>
 </head>
-<body>
+<body onload="startDirecting()">
 <img src="Images\текстура бумаги 17 проц.jpg" height="auto" width="auto" class="texture">
 <div class="sign_in_up">
     <div class="sign_in">
         <div class="tab_buttons">
-            <button  class="sign_button" onclick="Update2()" >РЕГИСТРАЦИЯ</button>
+            <button  class="sign_button" onclick="UpdateLogin()" >РЕГИСТРАЦИЯ</button>
             <button  class="sign_button" disabled>ВХОД</button>
         </div>
         <div class="input_fields">
@@ -23,12 +24,12 @@
                 Пароль <input class="enter_area" type="password"></input>
             </div>
         </div>
-        <button class="login_button">ВОЙТИ</button>
+        <button class="login_button" href="./start.html" onclick="redirectPage(this.href)">ВОЙТИ</button>
     </div>
     <div class="sign_up">
         <div class="tab_buttons">
             <button class="sign_button" disabled>РЕГИСТРАЦИЯ</button>
-            <button class="sign_button" onclick="Update()" >ВХОД</button>
+            <button class="sign_button" onclick="UpdateReg()" >ВХОД</button>
         </div>
         <div class="input_fields">
             <div class="field">
@@ -49,7 +50,7 @@
                 Пароль <input class="enter_area" type="password"></input>
             </div>
         </div>
-        <button class="login_button">Регистрация</button>
+        <button class="login_button" href="./start.html" onclick="redirectPage(this.href)">Регистрация</button>
     </div>
 </div>
 </body>
