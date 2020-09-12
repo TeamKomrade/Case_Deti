@@ -28,7 +28,12 @@ namespace Case_Deti.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Courses()
+        {
+            return View();
+        }
+
+        public IActionResult Profession()
         {
             return View();
         }
