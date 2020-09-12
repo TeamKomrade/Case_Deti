@@ -24,13 +24,7 @@ namespace Case_Deti.Controllers
 
         public async Task<ActionResult> Index()
         {
-            var user = await _db.Users.FirstOrDefaultAsync(u => u.Login == "hackadmin" && u.Password == Util.GetEncryptedBytes("hackadmin"));
-            if (user == null)
-            {
-                var admin = new Data.User() { Login = "hackadmin", Password = Util.GetEncryptedBytes("hackadmin"), FirstName = "--", LastName = "---", MiddleName = "---", Role = Role.Admin };
-                _db.Users.Add(admin);
-                await _db.SaveChangesAsync();
-            };
+            await FillDB(_db);
             return View();
         }
 
@@ -43,6 +37,43 @@ namespace Case_Deti.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        private async Task FillDB(DetiContext db)
+        {
+            var user = await _db.Users.FirstOrDefaultAsync(u => u.Login == "hackadmin" && u.Password == Util.GetEncryptedBytes("hackadmin"));
+            if (user == null)
+            {
+                var admin = new Data.User() 
+                { 
+                    Login = "hackadmin", 
+                    Password = Util.GetEncryptedBytes("hackadmin"), 
+                    FirstName = "--", LastName = "---", 
+                    MiddleName = "---", Role = 
+                    Role.Admin 
+                };
+
+                var profession = new Data.Profession()
+                {
+                    Name = "test prof",
+                    ImgURL = @"https://sun9-29.userapi.com/1-WgAmlkOwd-1_sW7Wp_uUlWFEjHdkAsZLxiLg/JCI0QEBnKX8.jpg",
+                    ProfessionID = 0
+                };
+
+                var profcategory = new Data.Category()
+                {
+                    ImgURL = @"https://sun9-29.userapi.com/1-WgAmlkOwd-1_sW7Wp_uUlWFEjHdkAsZLxiLg/JCI0QEBnKX8.jpg",
+                    Name = "test cat",
+                    CategoryID = 0
+                };
+
+                _db.Categories.Add(profcategory);
+                _db.Professions.Add(profession);
+                _db.ProfessionCategories.Add(new ProfessionCategory() { CategoryID = 0, ProfessionID = 0 });
+
+                _db.Users.Add(admin);
+                await _db.SaveChangesAsync();
+            };
         }
     }
 }

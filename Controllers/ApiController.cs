@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Case_Deti.Data;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -12,11 +14,19 @@ namespace Case_Deti.Controllers
     [ApiController]
     public class ApiController : ControllerBase
     {
+        private readonly ILogger<ApiController> _logger;
+        private readonly DetiContext _db;
+        public ApiController(ILogger<ApiController> logger, DetiContext context)
+        {
+            _logger = logger;
+            _db = context;
+        }
+
         // GET: api/<ApiController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public async Task<IEnumerable<Profession>> GetProfessions()
         {
-            return new string[] { "value1", "value2" };
+            return _db.Professions.ToArray();
         }
 
         // GET api/<ApiController>/5
