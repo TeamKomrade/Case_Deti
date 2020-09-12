@@ -22,10 +22,10 @@ namespace Case_Deti.Controllers
             _db = context;
         }
 
-        public async Task<ActionResult> Index()
+        public async Task<IActionResult> Index()
         {
             await FillDB(_db);
-            return View("Views/Home/Index.cshtml");
+            return View();
         }
 
         public IActionResult Privacy()
