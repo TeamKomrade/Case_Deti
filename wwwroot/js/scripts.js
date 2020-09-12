@@ -28,7 +28,7 @@ $(document).ready(function(){
 
 //Открытие окна профессии + анимация
 $(document).ready(function() {
-    profref="./profession.html";
+    profref ="../../Home/Profession";
     $("body").css("display", "none");
 
     $("body").fadeIn(2000);
@@ -180,7 +180,7 @@ function Update(){
         $('.cost').html(item.complexity);
         $('.courses_card').css("background",'url('+item.image+')');
         $('.back_to_profile').click(function(){
-            var profileref = "./profile.html";
+            var profileref = "../../User";
             redirectPage(profileref);
         });
         });
