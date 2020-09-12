@@ -1,0 +1,925 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+.start {
+    width: 100%;
+    height: 100%;
+    display: flex; /*flex*/
+    justify-content: center;
+    align-items: center;
+    background: #e4e4d4;
+}
+
+.message {
+    display: flex;
+    flex-direction: column;
+    flex-flow: column wrap;
+    padding: 5px;
+    border: black 1px dashed;
+    top: 5%;
+    right: 15%;
+    position: absolute;
+    background: rgb(250, 250, 250);
+}
+
+.text {
+    font-size: 150%;
+    font-weight: bold;
+}
+
+.sign {
+    margin-top: 2.5%;
+    text-align: right;
+    font-size: 100%;
+}
+
+.character {
+    border-radius: 50%;
+    border: black 1px double;
+    height: 150px;
+    width: 150px;
+    top: 5%;
+    right: 5%;
+    position: absolute;
+    background: white;
+}
+
+.rectangle {
+    background: rgb(23, 36, 78);
+    height: calc(50% - 175px);
+    width: 350px;
+    position: absolute;
+    top: 0;
+    right: calc(50% - 175px);
+    z-index: 1;
+}
+
+.line {
+    background: white;
+    position: absolute;
+    height: calc(50% - 250px);
+    width: 10px;
+    top: 0;
+    right: calc(50% - 5px);
+    z-index: 3;
+}
+
+.start_button {
+    background: rgb(23, 36, 78);
+    height: 500px;
+    width: 500px;
+    border-radius: 50%;
+    border: 10px rgb(23, 36, 78) solid;
+    z-index: 2;
+}
+
+.first {
+    background: none;
+    height: 480px;
+    width: 480px;
+    border-radius: 50%;
+    border: 10px solid white;
+}
+
+.second {
+    background: rgb(68, 155, 224);
+    border: 5px rgb(23, 36, 78) solid;
+    border-radius: 50%;
+    height: 470px;
+    width: 470px;
+}
+
+.start_text {
+    color: rgb(23, 36, 78);
+    font-size: 96px;
+    font-weight: 900;
+    font-family: "Lucida Console";
+    height: 460px;
+    width: 460px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+}
+
+.start_text:active {
+    height: 460px;
+    width: 460px;
+    border: 5px rgb(68, 155, 224) solid;
+    background: rgb(23, 36, 78);
+    color: rgb(68, 155, 224);
+}
+
+.texture {
+    z-index: 999;
+    width: inherit;
+    height: inherit;
+    position: fixed;
+    opacity: 0.17;
+    pointer-events: none;
+}
+
+.select {
+    width: 100%;
+    height: 100%;
+    display: none; /*flex*/
+    background: rgb(23, 36, 78);
+}
+
+.block {
+    height: 100%;
+    width: 50%;
+    background: none;
+    border: none;
+    font-family: "Lucida Console";
+    font-size: 64px;
+    color: white;
+    cursor: pointer;
+}
+
+.separator {
+    height: 100%;
+    width: 10px;
+    background: #e4e4d4;
+    transform: skew(-25deg);
+}
+
+.block:active {
+    font-weight: bold;
+}
+
+
+
+.profession {
+    width: 100%;
+    height: 100%;
+    display: flex; /*flex*/
+    background: #e4e4d4;
+}
+
+.user_choice {
+    height: 100%;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.information {
+    height: 10%;
+    width: 70%;
+    border: 5px rgb(23, 36, 78) solid;
+    background: url("https://sun9-52.userapi.com/e8NIgaGIHK6CpJ87ghYfQgcXSv2ylqQTKM_dqw/w47khqgOj9E.jpg");
+    background-size: 100% 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.nickname {
+    width: 100%;
+    height: 40%;
+    background: rgba(23, 36, 78, 0.5);
+}
+
+#nickname_text {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: "Lucida Console";
+    padding: 5px;
+}
+
+.selected_skills {
+    height: 90%;
+    width: 60%;
+    display: flex;
+    flex-flow: column wrap;
+    background: white;
+    border: 5px rgb(23, 36, 78) solid;
+    align-items: center;
+}
+
+.skill {
+    height: 5%;
+    width: 90%;
+    background: rgb(68, 155, 224);
+    margin: 5px;
+    cursor: pointer;
+}
+
+.skill:disabled {
+    color: rgba(68, 155, 224, 0.5);
+}
+
+#skill_text {
+    color: rgb(23, 36, 78);
+    font-size: 18px;
+    font-family: "Lucida Console";
+    padding: 10px;
+    border: 2px rgb(23, 36, 78) solid;
+}
+
+.decorative_line {
+    height: 70%;
+    width: 0.25%;
+    background: rgb(23, 36, 78);
+    position: absolute;
+    left: 18%;
+    top: 15%;
+}
+
+.choose {
+    height: 100%;
+    width: 80%;
+    background: rgb(23, 36, 78);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.mark {
+    z-index: 997;
+}
+
+.title {
+    width: max-content;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2.5%;
+    z-index: 998;
+}
+
+.title_line {
+    width: 100%;
+    height: 4px;
+    background: rgb(23, 36, 78);
+    margin: 5px;
+}
+
+#title_text {
+    background: rgb(23, 36, 78);
+    font-size: 24px;
+    color: white;
+    font-family: "Lucida Console";
+    padding: 10px 5px;
+}
+
+.carousel {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    overflow-y: auto;
+}
+
+.card {
+    z-index: 998;
+    width: 20%;
+    height: 20%;
+    margin: 2%;
+    border: 2px rgb(23, 36, 78) solid;
+    border-top-left-radius: 25%;
+    border-top-right-radius: 25%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.card_image {
+    background: url("https://sun1-23.userapi.com/c858036/v858036460/22f7e1/RwjukjsiVyA.jpg");
+    background-size: 100% 100%;
+    border: 2px rgb(23, 36, 78) solid;
+    height: 80%;
+    width: 90%;
+    border-top-left-radius: 25%;
+    border-top-right-radius: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.card_text {
+    width: 100%;
+    height: 25%;
+    background: linear-gradient(to right, rgb(68, 155, 224), rgba(68, 155, 224, 0.6), rgba(68, 155, 224, 0.2));
+}
+
+#card_text {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: "Lucida Console";
+    padding: 5px;
+}
+
+
+
+.courses {
+    width: 100%;
+    height: 100%;
+    display: flex; /*flex*/
+    background: #e4e4d4;
+}
+
+.course {
+    height: 100%;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#course_title {
+    top: 10%;
+    color: rgb(23, 36, 78);
+    font-size: 36px;
+    font-family: "Lucida Console";
+    font-weight: bold;
+    text-transform: uppercase;
+    position: absolute;
+}
+
+.courses_card {
+    width: 70%;
+    height: 60%;
+    border-radius: 5%;
+    background: url("https://sun9-10.userapi.com/gdGMJCASruPs15MxNEao89erNDU-hw6aSNHtJw/aQcHKzzun3c.jpg");
+    background-size: 100% 100%;
+    display: flex;
+    flex-flow: wrap column;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+.card_header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.text_stroke{
+    color: white;
+    text-shadow: black 1px 0px, black 1px 1px, black 0px 1px, black -1px 1px, black -1px 0px, black -1px -1px, black 0px -1px, black 1px -1px;
+}
+
+.card_title {
+    align-self: center;
+    font-family: "Lucida Console";
+    font-weight: bold;
+    font-style: oblique;
+    text-transform: uppercase;
+    font-size: 30px;
+    text-align: center;
+}
+
+.skills_icon {
+    height: 50%;
+    width: 100%;
+    border-radius: 50%;
+    background: white;
+}
+
+.tip {
+    display: none;
+    position: absolute;
+    background: #BD9A77;
+    white-space: pre-line;
+    color: white;
+    padding: 10px;
+    font-family: "Lucida Console";
+    font-size: 20px;
+    top: 20%;
+    left: 25%;
+    border-radius: 5%;
+}
+
+.skills_number {
+    font-family: "Lucida Console";
+    margin-top: 5px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.card_footer {
+    display: flex;
+    flex-direction: column;
+}
+
+.schedule {
+    display: flex;
+    flex-direction: column;
+    width: 55%;
+    align-self: flex-end;
+}
+
+.schedule_day {
+    margin-bottom: 1.5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 100%;
+}
+
+.time {
+    background: linear-gradient(to right, rgb(68, 155, 224), rgb(42, 95, 134));
+    padding: 5px 10px 5px 5px;
+    text-align: right;
+    border: 1px solid rgb(23, 36, 78);
+    border-radius: 25px;
+    width: 60%;
+    font-size: 16px;
+    font-family: "Lucida Console";
+    font-style: oblique;
+}
+
+.week_day {
+    font-size: 20px;
+    font-family: "Lucida Console";
+    font-style: oblique;
+
+}
+
+.description {
+    padding: 5px;
+    text-align: center;
+    background: white;
+    border-radius: 25px;
+    border: 1px solid black;
+    font-size: 16px;
+    color: black;
+    font-family: "Lucida Console";
+}
+
+.bottom {
+    margin-top: 2.5%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cost {
+    width: 5%;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.address {
+    align-self: center;
+    font-family: "Lucida Console";
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 20px;
+    text-align: center;
+    font-style: oblique;
+}
+
+#courses_line {
+    left: 30%;
+}
+
+/*.save {*/
+/*    position: absolute;*/
+/*    top: 10%;*/
+/*    right: 5%;*/
+/*    background: rgb(68, 155, 224);*/
+/*    color: black;*/
+/*    padding: 25px;*/
+/*    font-size: calc(14px + 2 * ((100vw - 375px) / 1225));*/
+/*    font-family: "Lucida Console";*/
+/*    text-transform: uppercase;*/
+/*    border-radius: 5%;*/
+/*    cursor: pointer;*/
+/*}*/
+
+.phases {
+    height: 100%;
+    width: 70%;
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+}
+
+.phases div:first-child {
+    margin-left: 5%;
+}
+
+.course_button div:first-child {
+    margin-left: 0;
+}
+
+.selected_course {
+    display: flex;
+    width: 30%;
+    height: 25%;
+}
+
+.course_button {
+    width: 250px;
+    height: 250px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.course_button:disabled {
+    width: 260px;
+    height: 260px;
+    border: 5px rgb(68, 155, 224) solid;
+    cursor: default;
+}
+
+.image_border {
+    width: 240px;
+    height: 240px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 5px white solid;
+}
+
+.term {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.period {
+    color: rgb(23, 36, 78);
+    font-size: 24px;
+    text-transform: uppercase;
+}
+
+.period_line {
+    min-width: 100px;
+    width: 90%;
+    height: 5%;
+    background: white;
+}
+
+.finish {
+    color: rgb(23, 36, 78);
+    font-size: 36px;
+    text-transform: uppercase;
+    font-family: "Lucida Console";
+    min-width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: rgb(68, 155, 224);
+    border: white 5px solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.back_to_profile {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    cursor: pointer;
+    border: none;
+    background: none;
+    width: max-content;
+    cursor: pointer;
+}
+
+.back_to_profile:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.profile_nickname {
+    color: white;
+    font-size: 36px;
+    font-family: "Lucida Console";
+    font-weight: bold;
+}
+
+.profile_icon {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 1px black solid;
+    background: url("https://sun9-56.userapi.com/LxtHVb96HUT6RwiIlhXbQ863pdsL78eCRZBHIQ/2KEw_yNSofk.jpg") no-repeat;
+    background-size: 100% 100%;
+    margin-left: 25px;
+}
+
+
+
+.profile {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background: #e4e4d4;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.user_profile {
+    position: absolute;
+    left: 5%;
+    height: 70%;
+    width: 28%;
+    background: white;
+    border-radius: 5%;
+    overflow: hidden;
+}
+
+.info {
+    height: 15%;
+    width: 100%;
+    background: #88C7DE;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#lvl {
+    color: #E1E3E9;
+    border-radius: 50%;
+    border: 5px solid #E1E3E9;
+    font-size: 48px;
+    font-family: "Lucida Console";
+    width: 15%;
+    height: 75%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#user_name {
+    color: #E1E3E9;
+    font-size: 64px;
+    font-family: "Lucida Console";
+}
+
+.user_image {
+    width: 100%;
+    height: 40%;
+    background: url("https://sun9-56.userapi.com/LxtHVb96HUT6RwiIlhXbQ863pdsL78eCRZBHIQ/2KEw_yNSofk.jpg") no-repeat;
+    background-size: 100% 100%;
+    border-top: 5px solid #2C2D26;
+    border-bottom: 5px solid #2C2D26;
+}
+
+.latest_achievements_title {
+    width: 100%;
+    height: 10%;
+    background: #459AAF;
+    border-bottom: 5px solid #2C2D26;
+    color: #604E49;
+    font-family: "Lucida Console";
+    font-size: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.latest_achievements {
+    width: 100%;
+    height: 35%;
+    background: #BD9A77;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.achievement {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.achievement_icon {
+}
+
+.achievement_title {
+    color: black;
+    font-family: "Lucida Console";
+    font-size: 24px;
+}
+
+.menu {
+    position: absolute;
+    right: 5%;
+    height: 50%;
+    width: 33%;
+    background: #E9D6B0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu_button {
+    width: 90%;
+    cursor: pointer;
+    background: none;
+    margin-bottom: 5%;
+    height: 15%;
+    border: 5px solid black;
+    font-size: 36px;
+    font-family: "Lucida Console";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu_button:last-child {
+    margin-bottom: 0;
+}
+
+.achievement_list {
+    background: #E7D4AF;
+    display: none;
+    position: absolute;
+    right: 7.5%;
+    height: 70%;
+    width: 28%;
+    border-radius: 5%;
+    overflow: hidden;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.achievement_description {
+    color: white;
+    font-family: "Lucida Console";
+}
+
+.menu_back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10%;
+    height: 7.5%;
+    background: #e4e4d4;
+    border-bottom-right-radius: 100%;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+#arrow_color {
+    color: #E1E3E9;
+}
+
+.skills_list {
+    background: #E7D4AF;
+    display: none;
+    position: absolute;
+    right: 7.5%;
+    height: 70%;
+    width: 28%;
+    border-radius: 5%;
+    overflow: hidden;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.skill_item {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    color: black;
+    font-family: "Lucida Console";
+    font-size: 24px;
+    height: 50px;
+}
+
+
+
+.sign_in_up {
+    width: 100%;
+    height: 100%;
+    background: #e4e4d4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sign_in {
+    height: 30%;
+    width: 30%;
+    border-radius: 25px;
+    background: white;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tab_buttons {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    padding: 5%;
+}
+
+.sign_button {
+    color: black;
+    font-size: 20px;
+    font-family: "Lucida Console";
+    border: none;
+    background: none;
+    margin-left: 5%;
+    margin-right: 5%;
+    cursor: pointer;
+    user-select: none;
+}
+
+.sign_button:disabled {
+    border-bottom: 5px black solid;
+    cursor: default;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.input_fields {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.field {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 90%;
+    margin: 2.5% 0;
+    color: black;
+    font-size: 24px;
+    font-family: "Lucida Console";
+}
+
+.enter_area {
+    margin-left: 2.5%;
+    width: 100%;
+    border: none;
+    border-bottom: 2px black solid;
+    font-size: 20px;
+    font-family: "Lucida Console";
+}
+
+.login_button {
+    width: 50%;
+    height: 10%;
+    background: #5BA5DE;
+    padding: 4%;
+    display: flex;
+    border: none;
+    align-items: center;
+    justify-content: center;
+    font-family: "Lucida Console";
+    font-size: 20px;
+    margin-bottom: 5%;
+    cursor: pointer;
+}
+
+.login_button:active {
+    font-weight: bold;
+}
+
+.sign_up {
+    height: 40%;
+    width: 30%;
+    border-radius: 25px;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.two_fields {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin: 2.5% 0;
+}

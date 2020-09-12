@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="Styles/Main.css">
+    <meta charset="UTF-8">
+    <title>ХакаЧто?</title>
+    <script src="js/scripts.js"></script>
+    <script src="js/jquery-3.5.1.js"> </script>
+</head>
+<body onload="CourseLoad()">
+<img src="Images\текстура бумаги 17 проц.jpg" height="auto" width="auto" class="texture">
+<div class="courses">
+    <div class="course">
+        <div id="course_title">
+            3D моделирование
+        </div>
+        <div class="courses_card">
+            <div class="card_header">
+                <div>
+                </div>
+                <div class="card_title text_stroke">
+                    3D моделирование
+                </div>
+                <div class="skills">
+                    <div class="skills_icon" onmouseout="TipVisible('none')" onmouseover="TipVisible('flex')"></div>
+                    <div class="skills_number text_stroke">
+                        4
+                    </div>
+                </div>
+            </div>
+            <div class="card_footer">
+                <div class="schedule">
+                    <div class="schedule_day">
+                        <div class="time text_stroke">14:00-16:00</div>
+                        <div class="week_day text_stroke">ПН</div>
+                    </div>
+                    <div class="schedule_day">
+                        <div class="time text_stroke">14:00-16:00</div>
+                        <div class="week_day text_stroke">ПН</div>
+                    </div>
+                    <div class="schedule_day">
+                        <div class="time text_stroke">14:00-16:00</div>
+                        <div class="week_day text_stroke">ПН</div>
+                    </div>
+                    <div class="schedule_day">
+                        <div class="time text_stroke">14:00-16:00</div>
+                        <div class="week_day text_stroke">ПН</div>
+                    </div>
+                    <div class="schedule_day">
+                        <div class="time text_stroke">14:00-16:00</div>
+                        <div class="week_day text_stroke">ПН</div>
+                    </div>
+                </div>
+                <div class="description ">
+                    Любите рисование? Игры? Современные фильмы? Тогда это то, что вам нужно!
+                </div>
+                <div class="bottom">
+                    <div class="cost text_stroke">
+                        0
+                    </div>
+                    <div class="address text_stroke">
+                        Ничтожная 1А
+                    </div>
+                    <div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="decorative_line" id="courses_line"></div>
+    <div class="phases">
+    </div>
+    <button class="back_to_profile" href="./profile.html" onclick="redirectPage(this.href)">
+        <div class="profile_nickname text_stroke">
+            Сергей
+        </div>
+        <div class="profile_icon"></div>
+    </button>
+</div>
+<div class="tip">Дышать
+     Дышать
+     Дышать
+     Дышать
+</div>
+</body>
+</html>
