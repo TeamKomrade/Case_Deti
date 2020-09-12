@@ -58,4 +58,52 @@ namespace Case_Deti.Controllers
         {
         }
     }
+
+    [Route("api/[controller]")]
+    [ApiController]
+    public class CategoryController : ControllerBase
+    {
+        private readonly ILogger<CategoryController> _logger;
+        private readonly DetiContext _db;
+        public CategoryController(ILogger<CategoryController> logger, DetiContext context)
+        {
+            _logger = logger;
+            _db = context;
+        }
+
+        // GET: api/<ApiController>
+        [HttpGet]
+        public async Task<IEnumerable<Category>> GetProfessions()
+        {
+            return _db.Categories
+                .Include(p => p.CategoryProfessions)
+                .ThenInclude(c => c.Profession)
+                .ToArray();
+        }
+
+        // GET api/<ApiController>/5
+        [HttpGet("{id}")]
+        public async Task<IEnumerable<Category>> Get(int id)
+        {
+            return _db.Categories.Where(c => c.CategoryID == id).ToArray();
+        }
+
+        // POST api/<ApiController>
+        [HttpPost]
+        public void Post([FromBody] string value)
+        {
+        }
+
+        // PUT api/<ApiController>/5
+        [HttpPut("{id}")]
+        public void Put(int id, [FromBody] string value)
+        {
+        }
+
+        // DELETE api/<ApiController>/5
+        [HttpDelete("{id}")]
+        public void Delete(int id)
+        {
+        }
+    }
 }
