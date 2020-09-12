@@ -121,7 +121,7 @@ namespace Case_Deti.Controllers
 
         // GET: api/<ApiController>
         [HttpGet]
-        public async Task<IEnumerable<Category>> GetCourses()
+        public async Task<IEnumerable<Course>> GetCourses()
         {
             return _db.Courses.ToArray();
         }
