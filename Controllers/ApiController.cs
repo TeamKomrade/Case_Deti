@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Case_Deti.Data;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -12,11 +13,11 @@ namespace Case_Deti.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ApiController : ControllerBase
+    public class ProfessionsController : ControllerBase
     {
-        private readonly ILogger<ApiController> _logger;
+        private readonly ILogger<ProfessionsController> _logger;
         private readonly DetiContext _db;
-        public ApiController(ILogger<ApiController> logger, DetiContext context)
+        public ProfessionsController(ILogger<ProfessionsController> logger, DetiContext context)
         {
             _logger = logger;
             _db = context;
@@ -26,14 +27,17 @@ namespace Case_Deti.Controllers
         [HttpGet]
         public async Task<IEnumerable<Profession>> GetProfessions()
         {
-            return _db.Professions.ToArray();
+            return _db.Professions
+                .Include(p => p.CategoryProfessions)
+                .ThenInclude(c => c.Category)
+                .ToArray();
         }
 
         // GET api/<ApiController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public async Task<IEnumerable<Profession>> Get(int id)
         {
-            return "value";
+            return _db.Professions.Where(p => p.ProfessionID == id).ToArray();
         }
 
         // POST api/<ApiController>
