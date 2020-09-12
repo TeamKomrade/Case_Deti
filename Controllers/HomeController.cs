@@ -69,6 +69,12 @@ namespace Case_Deti.Controllers
 
                 _db.ProfessionCategories.Add(new ProfessionCategory() { Category = category, Profession = profession });
 
+                var course = new Data.Course()
+                {
+                    
+                };
+
+
                 _db.Users.Add(admin);
                 await _db.SaveChangesAsync();
             };
