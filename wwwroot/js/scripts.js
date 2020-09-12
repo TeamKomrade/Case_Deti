@@ -78,7 +78,7 @@ function Update(){
         //     $("body").fadeOut(1000);
         //     redirectPage(courseref);
         cardo.addEventListener("click", function(){
-            var courseref = "./courses.html";
+            var courseref = "../../Home/Courses";
             // event.preventDefault();
             // linkLocation = courseref; //this.href;
             $("body").fadeOut(1000);
@@ -194,7 +194,7 @@ function TipVisible(vis){
 }
 function startDirecting(){
     $('.login_button').click(function(){
-        var startref = "./start.html"
+        var startref = "../../Home/Index"
         $("body").fadeOut(1000);
         redirectPage(startref);
     });
