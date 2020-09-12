@@ -25,7 +25,7 @@ namespace Case_Deti.Controllers
         public async Task<ActionResult> Index()
         {
             await FillDB(_db);
-            return View();
+            return View("Views/Home/Index.cshtml");
         }
 
         public IActionResult Privacy()
