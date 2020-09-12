@@ -61,11 +61,11 @@ namespace Case_Deti.Controllers
 
     [Route("api/[controller]")]
     [ApiController]
-    public class CategoryController : ControllerBase
+    public class CategoriesController : ControllerBase
     {
-        private readonly ILogger<CategoryController> _logger;
+        private readonly ILogger<CategoriesController> _logger;
         private readonly DetiContext _db;
-        public CategoryController(ILogger<CategoryController> logger, DetiContext context)
+        public CategoriesController(ILogger<CategoriesController> logger, DetiContext context)
         {
             _logger = logger;
             _db = context;
