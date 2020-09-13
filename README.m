@@ -1,5 +1,9 @@
 # Case_Deti
-https://case-domenru.herokuapp.com/ - тестовая версия сайта. 
+https://case-domenru.herokuapp.com/ - тестовая версия сайта.
+Перейти на вкладку логин
+Ввести логин: hackadmin
+Ввести пароль: hackadmin
+Войти
 Нажать старт.
 Выбрать "Кем стать"
 Выбрать категорию => Выбрать профессию 
