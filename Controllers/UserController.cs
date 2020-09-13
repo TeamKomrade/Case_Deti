@@ -119,7 +119,7 @@ namespace Case_Deti.Controllers
                     };
                     _db.Users.Add(user);
                     await _db.SaveChangesAsync();
-                    return RedirectToAction("Login", "User");
+                    return RedirectToAction("Index", "Home");
                 }
                 else ModelState.AddModelError("", "Такой пользователь уже есть в базе данных");
             }
