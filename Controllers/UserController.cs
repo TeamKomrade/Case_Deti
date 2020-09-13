@@ -53,6 +53,12 @@ namespace Case_Deti.Controllers
             return View();
         }
 
+        [HttpGet]
+        public IActionResult CoursesList()
+        {
+            return View();
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterModel model)
@@ -80,7 +86,7 @@ namespace Case_Deti.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> Login(LoginModel model)
+        public async Task<ActionResult> Login(RegisterModel model)
         {
             if (ModelState.IsValid)
             {

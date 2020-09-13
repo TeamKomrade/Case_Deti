@@ -13,7 +13,7 @@ $(document).ready(function(){
 
 //Открытие окна профессии + анимация
 $(document).ready(function() {
-    profref="./profession.html";
+    profref ="/../../Home/Profession";
     $("body").css("display", "none");
 
     $("body").fadeIn(2000);
@@ -44,7 +44,7 @@ function Update(){
                     $('.carousel').append(cardo);
 
                     cardo.addEventListener("click", function(){
-                        var courseref = "./courses.html";
+                        var courseref = "/../../Home/Courses";
 
                         $("body").fadeOut(1000);
                         redirectPage(courseref);
@@ -97,10 +97,11 @@ function CourseLoad(){
             $('.address').html(item.address);
             $('.cost').html(item.complexity);
             $('.courses_card').css("background",'url('+item.image+')');
-            $('.back_to_profile').click(function(){
-                var profileref = "./profile.html";
-                redirectPage(profileref);
-            });
+            
+        });
+        $('.back_to_profile').click(function () {
+            var profileref = "/../../User/Index";
+            redirectPage(profileref);
         });
 
     });
@@ -112,7 +113,7 @@ function TipVisible(vis){
 }
 function startDirecting(){
     $('.login_button').click(function(){
-        var startref = "./start.html"
+        var startref = "/../../Home/Index"
         $("body").fadeOut(1000);
         redirectPage(startref);
     });
@@ -150,7 +151,7 @@ function selectMenu(){
 
         }
         else if(htmlcont == "Успеваемость"){
-            var courlistref = "./courses_list.html";
+            var courlistref = "/../../User/CoursesList";
             $("body").fadeOut(1000);
             redirectPage(courlistref);
         }
