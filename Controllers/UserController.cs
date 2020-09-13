@@ -72,13 +72,13 @@ namespace Case_Deti.Controllers
         [HttpGet]
         public IActionResult Register()
         {
-            return View();
+            return RedirectToAction("Login");
         }
 
         [HttpGet]
         public IActionResult Login()
         {
-            if (User.Identity.IsAuthenticated) return RedirectToAction("Index");
+            if (User.Identity.IsAuthenticated) return RedirectToAction("Index", "Home");
             return View();
         }
 
