@@ -29,7 +29,10 @@ namespace Case_Deti
             services.AddControllersWithViews()
                 .AddNewtonsoftJson(options => 
                 options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
-
+            services.AddCors(options => options.AddPolicy("policy", builder =>
+                builder.AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader()));
             services.AddDbContext<DetiContext>(options =>
             {
                 options.UseNpgsql(Configuration.GetConnectionString("DetiDB"));
