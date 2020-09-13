@@ -139,7 +139,13 @@ namespace Case_Deti.Controllers
             if (prof == null) return null;
 
             var courses = new List<Course>();
-            foreach (var pc in prof.ProfessionCourses) courses.Add(pc.Course);
+            foreach (var pc in prof.ProfessionCourses)
+            {
+                var temp = pc.Course;
+                temp.ProfessionCourses = null;
+                temp.CourseSkills = null;
+                courses.Add(temp);
+            } 
             return courses;
         }
 
