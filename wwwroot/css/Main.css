@@ -914,7 +914,7 @@ html, body {
     height: 60%;
     width: 33%;
     background: #E9D6B0;
-    display: none;
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -998,7 +998,7 @@ html, body {
 
 .vector {
     background: #E7D4AF;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     position: absolute;
