@@ -75,30 +75,36 @@ function CourseLoad(){
     var mjm = '[{"id":1,"cub_image":"https://sun1-47.userapi.com/GzPRod_alat5fm4fr67xEEPsu7borC9LgoB25A/t6E9uNTBaoI.jpg", "time":"2 МЕС.","name":"3д моделирование","skill_list":[{"name":"построение моделей"},{"name":"построение моделей"},{"name":"построение моделей"},{"name":"построение моделей"}],"time_list":[{"name":"13:00 - 15:00", "marker":"ВТ"},{"name":"14:00 - 16:00", "marker":"ПН"},{"name":"14:00 - 16:00", "marker":"ПН"},{"name":"14:00 - 16:00", "marker":"ПН"},{"name":"14:00 - 16:00", "marker":"ПН"}],"info":"Любите рисование? Игры? Современные фильмы? Тогда это >>>  вам нужно!","address":"Zooze, д.98","complexity":"0","image":"https://sun9-10.userapi.com/gdGMJCASruPs15MxNEao89erNDU-hw6aSNHtJw/aQcHKzzun3c.jpg"}]';
     //var dota = '[{"id":1, "cub_image":"https://sun1-47.userapi.com/GzPRod_alat5fm4fr67xEEPsu7borC9LgoB25A/t6E9uNTBaoI.jpg", "time":"2 МЕС.","name":"3д моделирование","skill_list":[{"name":"построение моделей"},{"name":"построение моделей"},{"name":"построение моделей"},{"name":"построение моделей"}],"time_list":[{"name":"14:00 - 16:00", "marker":"ПН"},{"name":"14:00 - 16:00", "marker":"ПН"},{"name":"14:00 - 16:00", "marker":"ПН"},{name":"14:00 - 16:00", "marker":"ПН"},{name:"14:00 - 16:00", "marker":"ПН"}],"info":"Любите рисование? Игры? Современные фильмы?\n Тогда это то что вам нужно!","address":"Фрунзе, д.98","complexity":"0","image":"https://sun9-10.userapi.com/gdGMJCASruPs15MxNEao89erNDU-hw6aSNHtJw/aQcHKzzun3c.jpg"},{"id":2, "cub_image":"https://sun9-65.userapi.com/bjE1oWnV2F6EgvSncisr-FOwhgcEc8SHluv9Gw/6TcrWoCP0_Y.jpg", "time":"2 МЕС.","name":"3д моделирование","skill_list":[{"name":"построение моделей"},{"name":"построение моделей"},{"name":"построение моделей"},{"name":"построение моделей"}],"time_list":[{"name":"14:00 - 16:00", "marker":"ПН"},{"name":"14:00 - 16:00", "marker":"ПН"},{"name":"14:00 - 16:00", "marker":"ПН"},{name":"14:00 - 16:00", "marker":"ПН"},{name:"14:00 - 16:00", "marker":"ПН"}],"info":"Любите рисование? Игры? Современные фильмы?\n Тогда это то что вам нужно!","address":"Фрунзе, д.98","complexity":"0","image":"https://sun9-10.userapi.com/gdGMJCASruPs15MxNEao89erNDU-hw6aSNHtJw/aQcHKzzun3c.jpg"},{"id":2, "cub_image":"https://sun9-13.userapi.com/UDvZEuU4ifgc02VAn8TAI8tEn_wt7LRys7ecZg/xv68_rmbtTM.jpg", "time":"2 МЕС.","name":"3д моделирование","skill_list":[{"name":"построение моделей"},{"name":"построение моделей"},{"name":"построение моделей"},{"name":"построение моделей"}],"time_list":[{"name":"14:00 - 16:00", "marker":"ПН"},{"name":"14:00 - 16:00", "marker":"ПН"},{"name":"14:00 - 16:00", "marker":"ПН"},{name":"14:00 - 16:00", "marker":"ПН"},{name:"14:00 - 16:00", "marker":"ПН"}],"info":"Любите рисование? Игры? Современные фильмы?\n Тогда это то что вам нужно!","address":"Фрунзе, д.98","complexity":"0","image":"https://sun9-10.userapi.com/gdGMJCASruPs15MxNEao89erNDU-hw6aSNHtJw/aQcHKzzun3c.jpg"}]';
     var dota = JSON.parse(mjm);
-
+let i =0;
     dota.forEach(function (item){
         let div = document.createElement('div');
         div.className="selected_course";
         div.innerHTML='<button class="course_button" disabled><div class="image_border"><img src="'+item.cub_image+'" width="100%"></div></button><div class="term"><div class="period">'+item.time+'</div><div class="period_line"></div></div>';
         $('.phases').append(div);
-        div.addEventListener("click", function(){
-            $('.card_title').html(item.name);
-            $('.schedule').empty();
-            item.time_list.forEach(function(timeStamp){
-                $('.schedule').append('<div class="schedule_day"><div class="time text_stroke">'+timeStamp.name+'</div><div class="week_day text_stroke">'+timeStamp.marker+'</div></div>');
-            });
-            $('.tip').empty();
+            const item_info= function(){
+                $('.card_title').html(item.name);
+                $('.schedule').empty();
+                item.time_list.forEach(function(timeStamp){
+                    $('.schedule').append('<div class="schedule_day"><div class="time text_stroke">'+timeStamp.name+'</div><div class="week_day text_stroke">'+timeStamp.marker+'</div></div>');
+                });
+                $('.tip').empty();
 
-            item.skill_list.forEach(function(skillItem){
-                $('.tip').append(skillItem.name+'\n');
+                item.skill_list.forEach(function(skillItem){
+                    $('.tip').append(skillItem.name+'\n');
 
-            });
-            $('.description').html(item.info);
-            $('.address').html(item.address);
-            $('.cost').html(item.complexity);
-            $('.courses_card').css("background",'url('+item.image+')');
-            
-        });
+                });
+                $('.description').html(item.info);
+                $('.address').html(item.address);
+                $('.cost').html(item.complexity);
+                $('.courses_card').css("background",'url('+item.image+')');
+
+            };
+            if(i==0)
+            {
+                item_info();
+            }
+            i++;
+        div.addEventListener("click", item_info);
         $('.back_to_profile').click(function () {
             var profileref = "/../../User/Index";
             redirectPage(profileref);
@@ -152,7 +158,7 @@ function selectMenu(){
         }
         else if(htmlcont == "Рейтинг"){
 
-            var ratref = "/../../Home/Rating";
+            var ratref = "/../../User/Rating";
             $("body").fadeOut(1000);
             redirectPage(ratref);
 
