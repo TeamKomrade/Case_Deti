@@ -78,14 +78,21 @@ namespace Case_Deti.Controllers
         // GET: api/<ApiController>
         [HttpGet]
         [DisableCors]
-        public async Task<IEnumerable<Category>> GetCategories()
+        public async Task<IEnumerable<ReturnCategory>> GetCategories()
         {
             return _db.Categories
                 .Include(p => p.CategoryProfessions)
                 .ThenInclude(c => c.Profession)
-                .ToArray();
+                .Select(s => new ReturnCategory 
+                { 
+                    CategoryID = s.CategoryID, 
+                    Name = s.Name, 
+                    ImgURL = s.ImgURL, 
+                    Professions = s.CategoryProfessions.Select(p => p.Profession).ToList()
+                });
         }
 
+        
         // GET api/<ApiController>/5
         [HttpGet("{id}")]
         [DisableCors]
@@ -111,6 +118,14 @@ namespace Case_Deti.Controllers
         public void Delete(int id)
         {
         }
+    }
+
+    public class ReturnCategory
+    {
+        public int CategoryID { get; set; }
+        public string Name { get; set; }
+        public string ImgURL { get; set; }
+        public IList<Profession> Professions { get; set; }
     }
 
     [Route("api/[controller]")]
