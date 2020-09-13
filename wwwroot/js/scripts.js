@@ -32,10 +32,10 @@ function Update(){
         //     $('#countries').append('<option value="' + val + '">' + key + '</option>');
         // });
         // var catlist = '[{"id":1, "name":"Программирование","list_profession":[{"id":1, "name":"Программирование.1", "image":"https://sun9-57.userapi.com/T-_ZXCyq66z03gYjCpz16TolzLxmFO_a-y9aOg/YgpiNWAd-P8.jpg"},{"id":2, "name":"Прогр.2", "image":"https://sun9-57.userapi.com/T-_ZXCyq66z03gYjCpz16TolzLxmFO_a-y9aOg/YgpiNWAd-P8.jpg"}]},{"id":2, "name":"Литература","list_profession":[{"id":3, "name":"Литр1", "image":"https://sun9-57.userapi.com/T-_ZXCyq66z03gYjCpz16TolzLxmFO_a-y9aOg/YgpiNWAd-P8.jpg"},{"id":4, "name":"Литр2", "image":"https://sun9-57.userapi.com/T-_ZXCyq66z03gYjCpz16TolzLxmFO_a-y9aOg/YgpiNWAd-P8.jpg"}]}]';
-        alert("")
-        var data = JSON.parse(catlist);
+        // alert("")
+        // var data = JSON.parse(catlist);
                 $('.selected_skills').empty();
-        data.forEach(function (item){
+        catlist.forEach(function (item){
 
                 let div = document.createElement('div');
                 div.addEventListener("click",function(){
