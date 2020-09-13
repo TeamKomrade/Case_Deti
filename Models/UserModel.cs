@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Case_Deti.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -17,10 +18,6 @@ namespace Case_Deti.Models
         [Display(Name = "Отчество")]
         public string MiddleName { get; set; }
 
-        [Display(Name = "Возраст")]
-        public int Age { get; set; }
-
-        [Display(Name = "Пол")]
-        public char Sex { get; set; }
+        public IList<Achievement> Achievements { get; set; }
     }
 }

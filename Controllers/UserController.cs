@@ -30,11 +30,20 @@ namespace Case_Deti.Controllers
             if (User.Identity.IsAuthenticated)
             {
                 var login = User.Claims.ToList()[0].Value;
-                var current_user = _db.Users.Where(u => u.Login == login).FirstOrDefault();
+                var current_user = _db.Users
+                    .Where(u => u.Login == login)
+                    .Include(u => u.UserAchievements)
+                    .ThenInclude(ua => ua.Achievement).FirstOrDefault();
                 if (current_user == null) return RedirectToAction("Login");
+                var hasFName = current_user.FirstName != null;
+                var hasLName = current_user.LastName != null;
+                var achievements = new List<Achievement>();
+                foreach (var ua in current_user.UserAchievements) achievements.Add(ua.Achievement);
                 var user = new UserModel()
                 {
-
+                    FirstName = (hasFName) ? current_user.FirstName : "Сергей",
+                    LastName = (hasLName) ? current_user.LastName : "Сергеев",
+                    Achievements = achievements.ToList()
                 };
                 return View();
             }
@@ -50,6 +59,7 @@ namespace Case_Deti.Controllers
         [HttpGet]
         public IActionResult Login()
         {
+            if (User.Identity.IsAuthenticated) return RedirectToAction("Index");
             return View();
         }
 
@@ -107,8 +117,7 @@ namespace Case_Deti.Controllers
         {
             var claims = new List<Claim>
             {
-                new Claim(ClaimsIdentity.DefaultNameClaimType, user.Login),
-                new Claim(ClaimsIdentity.DefaultRoleClaimType, user.Role.ToString())
+                new Claim(ClaimsIdentity.DefaultNameClaimType, user.Login)
             };
             var id = new ClaimsIdentity(claims, "ApplicationCookie", ClaimsIdentity.DefaultNameClaimType, ClaimsIdentity.DefaultRoleClaimType);
             await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(id));

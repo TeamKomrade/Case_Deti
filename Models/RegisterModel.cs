@@ -21,26 +21,18 @@ namespace Case_Deti.Models
         public string Password { get; set; }
 
 
-        [Required]
         [Display(Name = "Имя")]
-        [StringLength(64, ErrorMessage = "Имя должно содержать не менее {2} знаков и не более {1}.", MinimumLength = 2)]
         public string FirstName { get; set; }
 
-        [Required]
         [Display(Name = "Фамилия")]
-        [StringLength(64, ErrorMessage = "Фамилия должна содержать не менее {2} знаков и не более {1}.", MinimumLength = 2)]
         public string LastName { get; set; }
 
-        [Required]
         [Display(Name = "Отчество")]
-        [StringLength(64, ErrorMessage = "Отчество должно содержать не менее {2} знаков и не более {1}.", MinimumLength = 2)]
         public string MiddleName { get; set; }
 
-        [Required]
         [Display(Name = "Возраст")]
         public int Age { get; set; }
 
-        [Required]
         [Display(Name = "Пол")]
         public char Sex { get; set; }
     }
