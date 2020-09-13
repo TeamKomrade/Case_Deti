@@ -213,11 +213,14 @@ html, body {
 }
 
 .skill {
-    height: 5%;
+    min-height: 5%;
+    height: max-content;
     width: 90%;
     background: rgb(68, 155, 224);
+    background-size: 100% 100%;
     margin: 5px;
     cursor: pointer;
+    border: 2px rgb(23, 36, 78) solid;
 }
 
 .skill:disabled {
@@ -229,7 +232,6 @@ html, body {
     font-size: 18px;
     font-family: "Lucida Console";
     padding: 10px;
-    border: 2px rgb(23, 36, 78) solid;
 }
 
 .decorative_line {
