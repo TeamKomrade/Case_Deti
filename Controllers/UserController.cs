@@ -88,6 +88,12 @@ namespace Case_Deti.Controllers
             return View();
         }
 
+        [HttpGet]
+        public IActionResult Progress()
+        {
+            return View();
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterModel model)
