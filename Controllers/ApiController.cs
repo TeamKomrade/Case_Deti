@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Case_Deti.Data;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -11,6 +12,7 @@ using Microsoft.Extensions.Logging;
 
 namespace Case_Deti.Controllers
 {
+    
     [Route("api/[controller]")]
     [ApiController]
     public class ProfessionsController : ControllerBase
@@ -25,6 +27,7 @@ namespace Case_Deti.Controllers
 
         // GET: api/<ApiController>
         [HttpGet]
+        [DisableCors]
         public async Task<IEnumerable<Profession>> GetProfessions()
         {
             return _db.Professions
@@ -35,6 +38,7 @@ namespace Case_Deti.Controllers
 
         // GET api/<ApiController>/5
         [HttpGet("{id}")]
+        [DisableCors]
         public async Task<IEnumerable<Profession>> Get(int id)
         {
             return _db.Professions.Where(p => p.ProfessionID == id).ToArray();
@@ -73,6 +77,7 @@ namespace Case_Deti.Controllers
 
         // GET: api/<ApiController>
         [HttpGet]
+        [DisableCors]
         public async Task<IEnumerable<Category>> GetCategories()
         {
             return _db.Categories
@@ -83,6 +88,7 @@ namespace Case_Deti.Controllers
 
         // GET api/<ApiController>/5
         [HttpGet("{id}")]
+        [DisableCors]
         public async Task<IEnumerable<Category>> Get(int id)
         {
             return _db.Categories.Where(c => c.CategoryID == id).ToArray();
@@ -121,6 +127,7 @@ namespace Case_Deti.Controllers
 
         // GET: api/<ApiController>
         [HttpGet]
+        [DisableCors]
         public async Task<IEnumerable<Course>> GetCourses()
         {
             return _db.Courses.ToArray();
@@ -128,6 +135,7 @@ namespace Case_Deti.Controllers
 
         // GET api/<ApiController>/5
         [HttpGet("{id}")]
+        [DisableCors]
         public async Task<IEnumerable<Course>> GetRelatedCourses(int id)
         {
             //курсы под профессию
