@@ -41,7 +41,7 @@ namespace Case_Deti.Models
         public int Age { get; set; }
 
         [Required]
-        [Display(Name = "Зарегистрировать как организацию?")]
+        [Display(Name = "Пол")]
         public char Sex { get; set; }
     }
 }

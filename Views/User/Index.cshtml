@@ -1,4 +1,9 @@
-﻿<!DOCTYPE html>
+﻿@using Case_Deti.Models
+@Model UserModel
+@{
+
+}
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <link rel="stylesheet" href="~/css/Main.css">
@@ -14,7 +19,7 @@
                     13
                 </div>
                 <div id="user_name">
-                    Сергей
+                    @Model.Name
                 </div>
             </div>
             <div class="user_image"></div>

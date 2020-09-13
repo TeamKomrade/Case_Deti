@@ -27,7 +27,18 @@ namespace Case_Deti.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            return View();
+            if (User.Identity.IsAuthenticated)
+            {
+                var login = User.Claims.ToList()[0].Value;
+                var current_user = _db.Users.Where(u => u.Login == login).FirstOrDefault();
+                if (current_user == null) return RedirectToAction("Login");
+                var user = new UserModel()
+                {
+
+                };
+                return View();
+            }
+            else return RedirectToAction("Login");
         }
 
         [HttpGet]
