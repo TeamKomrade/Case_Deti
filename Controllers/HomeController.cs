@@ -65,6 +65,13 @@ namespace Case_Deti.Controllers
                     ProfessionID = 0
                 };
 
+                var profession1 = new Data.Profession()
+                {
+                    Name = "Специалист по VR",
+                    ImgURL = @"https://sun9-29.userapi.com/1-WgAmlkOwd-1_sW7Wp_uUlWFEjHdkAsZLxiLg/JCI0QEBnKX8.jpg",
+                    ProfessionID = 0
+                };
+
                 var category = new Data.Category()
                 {
                     ImgURL = @"https://sun9-29.userapi.com/1-WgAmlkOwd-1_sW7Wp_uUlWFEjHdkAsZLxiLg/JCI0QEBnKX8.jpg",
@@ -73,6 +80,7 @@ namespace Case_Deti.Controllers
                 };
 
                 _db.ProfessionCategories.Add(new ProfessionCategory() { Category = category, Profession = profession });
+                _db.ProfessionCategories.Add(new ProfessionCategory() { Category = category, Profession = profession1 });
 
                 var course = new Data.Course()
                 {
@@ -103,12 +111,42 @@ namespace Case_Deti.Controllers
                     },
                 };
 
+                var course1 = new Data.Course()
+                {
+                    Name = "Разработка VR и AR приложений",
+                    Address = "ул. Пушкина д. 10а",
+                    ApproxTime = "21",
+                    DifficultyLevel = "5",
+                    ImgURL = "http://www.juntech.ru/sites/default/files/inline-images/%D0%B2%D0%B8%D0%B0%D1%80.png",
+                    Info = "На занятиях этого направления Вы: " +
+                    "- научитесь разбираться в технологиях и адаптировать их под свои проекты; " +
+                    "- будете применять самостоятельные разработки приложений виртуальной (VR), дополненной (AR) и смешанной (MR) реальности для различных устройств; " +
+                    "- разберете приемы программирования в контексте игрового движка Unity. " +
+                    "- освоите ААА-пайплайн в 3D- моделировании (разработка lowpoly-модели с разверткой и простой текстурой). " +
+                    "Рекомендовано для 12 - 18 лет.",
+                    ScheduleList = new List<Schedule>()
+                    {
+                        new Schedule()
+                        {
+                            Marker = "ПН-ПТ",
+                            Time = "13:20"
+                        },
+                        new Schedule()
+                        {
+                            Marker = "СБ",
+                            Time = "10:00"
+                        }
+                    },
+                };
+
                 var skill = new Skill()
                 {
                     Name = "Программирование"
                 };
                 _db.ProfessionCourses.Add(new ProfessionCourse() { Profession = profession, Course = course });
+                _db.ProfessionCourses.Add(new ProfessionCourse() { Profession = profession, Course = course1 });
                 _db.CourseSkills.Add(new CourseSkills() { Course = course, Skill = skill });
+                _db.CourseSkills.Add(new CourseSkills() { Course = course1, Skill = skill });
                 _db.Users.Add(admin);
                 await _db.SaveChangesAsync();
             };
