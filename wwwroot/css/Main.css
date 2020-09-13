@@ -1035,7 +1035,7 @@ html, body {
 }
 
 .vector_item:disabled {
-    cursor: none;
+    cursor: default;
     align-items: center;
     justify-content: center;
 }
