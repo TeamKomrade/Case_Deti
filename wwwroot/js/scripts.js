@@ -48,7 +48,7 @@ function Update(){
 
                         cardo.addEventListener("click", function(){
                             var courseref = "/../../Home/Courses";
-
+                            SaveTheme(item2.professionID);
                             $("body").fadeOut(1000);
                             redirectPage(courseref);
                         });
@@ -66,7 +66,10 @@ function Update(){
 
 
 }
-
+const keyTheme = "theme";
+function SaveTheme(activeClass) {
+    localStorage.setItem(keyTheme, activeClass);
+}
 function UpdProfile(){
     var profjson = '{"id":1, "name":"Иван", "image":"https://sun9-56.userapi.com/LxtHVb96HUT6RwiIlhXbQ863pdsL78eCRZBHIQ/2KEw_yNSofk.jpg"}';
     profdata = JSON.parse(profjson);
@@ -80,6 +83,8 @@ function redirectPage(loca) {
 
 function CourseLoad(){
     var mjm = '[{"id":1,"cub_image":"https://sun1-47.userapi.com/GzPRod_alat5fm4fr67xEEPsu7borC9LgoB25A/t6E9uNTBaoI.jpg", "time":"2 МЕС.","name":"3д моделирование","skill_list":[{"name":"построение моделей"},{"name":"построение моделей"},{"name":"построение моделей"},{"name":"построение моделей"}],"time_list":[{"name":"13:00 - 15:00", "marker":"ВТ"},{"name":"14:00 - 16:00", "marker":"ПН"},{"name":"14:00 - 16:00", "marker":"ПН"},{"name":"14:00 - 16:00", "marker":"ПН"},{"name":"14:00 - 16:00", "marker":"ПН"}],"info":"Любите рисование? Игры? Современные фильмы? Тогда это >>>  вам нужно!","address":"Zooze, д.98","complexity":"0","image":"https://sun9-10.userapi.com/gdGMJCASruPs15MxNEao89erNDU-hw6aSNHtJw/aQcHKzzun3c.jpg"}]';
+
+    alert(localStorage.getItem(keyTheme))
     //var dota = '[{"id":1, "cub_image":"https://sun1-47.userapi.com/GzPRod_alat5fm4fr67xEEPsu7borC9LgoB25A/t6E9uNTBaoI.jpg", "time":"2 МЕС.","name":"3д моделирование","skill_list":[{"name":"построение моделей"},{"name":"построение моделей"},{"name":"построение моделей"},{"name":"построение моделей"}],"time_list":[{"name":"14:00 - 16:00", "marker":"ПН"},{"name":"14:00 - 16:00", "marker":"ПН"},{"name":"14:00 - 16:00", "marker":"ПН"},{name":"14:00 - 16:00", "marker":"ПН"},{name:"14:00 - 16:00", "marker":"ПН"}],"info":"Любите рисование? Игры? Современные фильмы?\n Тогда это то что вам нужно!","address":"Фрунзе, д.98","complexity":"0","image":"https://sun9-10.userapi.com/gdGMJCASruPs15MxNEao89erNDU-hw6aSNHtJw/aQcHKzzun3c.jpg"},{"id":2, "cub_image":"https://sun9-65.userapi.com/bjE1oWnV2F6EgvSncisr-FOwhgcEc8SHluv9Gw/6TcrWoCP0_Y.jpg", "time":"2 МЕС.","name":"3д моделирование","skill_list":[{"name":"построение моделей"},{"name":"построение моделей"},{"name":"построение моделей"},{"name":"построение моделей"}],"time_list":[{"name":"14:00 - 16:00", "marker":"ПН"},{"name":"14:00 - 16:00", "marker":"ПН"},{"name":"14:00 - 16:00", "marker":"ПН"},{name":"14:00 - 16:00", "marker":"ПН"},{name:"14:00 - 16:00", "marker":"ПН"}],"info":"Любите рисование? Игры? Современные фильмы?\n Тогда это то что вам нужно!","address":"Фрунзе, д.98","complexity":"0","image":"https://sun9-10.userapi.com/gdGMJCASruPs15MxNEao89erNDU-hw6aSNHtJw/aQcHKzzun3c.jpg"},{"id":2, "cub_image":"https://sun9-13.userapi.com/UDvZEuU4ifgc02VAn8TAI8tEn_wt7LRys7ecZg/xv68_rmbtTM.jpg", "time":"2 МЕС.","name":"3д моделирование","skill_list":[{"name":"построение моделей"},{"name":"построение моделей"},{"name":"построение моделей"},{"name":"построение моделей"}],"time_list":[{"name":"14:00 - 16:00", "marker":"ПН"},{"name":"14:00 - 16:00", "marker":"ПН"},{"name":"14:00 - 16:00", "marker":"ПН"},{name":"14:00 - 16:00", "marker":"ПН"},{name:"14:00 - 16:00", "marker":"ПН"}],"info":"Любите рисование? Игры? Современные фильмы?\n Тогда это то что вам нужно!","address":"Фрунзе, д.98","complexity":"0","image":"https://sun9-10.userapi.com/gdGMJCASruPs15MxNEao89erNDU-hw6aSNHtJw/aQcHKzzun3c.jpg"}]';
     var dota = JSON.parse(mjm);
 let i =0;
