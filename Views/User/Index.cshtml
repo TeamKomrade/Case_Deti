@@ -25,22 +25,17 @@
             Последние Достижения
         </div>
         <div class="latest_achievements">
+            @foreach (var achievement in Model.Achievements)
+            {
             <div class="achievement">
                 <div class="achievement_icon">
-                    <img src="~/Images/kot.png" width="80%" height="80%">
+                    <img src="@achievement.ImgURL" width="80%" height="80%">
                 </div>
                 <div class="achievement_title">
-                    Сделать Бэкэнд
+                    @achievement.Title
                 </div>
             </div>
-            <div class="achievement">
-                <div class="achievement_icon">
-                    <img src="~/Images/kot.png" width="80%" height="80%">
-                </div>
-                <div class="achievement_title">
-                    Сделать Бэкэнд
-                </div>
-            </div>
+            }
         </div>
     </div>
     <div class="menu">

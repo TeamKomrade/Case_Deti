@@ -47,7 +47,26 @@ namespace Case_Deti.Controllers
                 };
                 return View();
             }
-            else return RedirectToAction("Login");
+            else
+            {
+                var achievements = new List<Achievement>()
+                {
+                    new Achievement()
+                    {
+                        AchievementID = 0,
+                        Title = "Основы C#",
+                        ImgURL = "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/C_Sharp_logo.svg/218px-C_Sharp_logo.svg.png"
+                    }
+                };
+                var user = new UserModel()
+                {
+                    FirstName = "Александр",
+                    LastName = "Петров",
+                    MiddleName = "Игоревич",
+                    Achievements = achievements,
+                };
+                return View(user);
+            }
         }
 
         [HttpGet]
