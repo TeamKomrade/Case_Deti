@@ -144,7 +144,7 @@ function selectMenu(){
         }
         else if(htmlcont == "Рейтинг"){
 
-            var ratref = "./rating.html";
+            var ratref = "/../../Home/Rating";
             $("body").fadeOut(1000);
             redirectPage(ratref);
 
