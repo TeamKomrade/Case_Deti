@@ -31,7 +31,7 @@ function Update(){
         // $.each(data, function(key, val) {
         //     $('#countries').append('<option value="' + val + '">' + key + '</option>');
         // });
-        log(data)
+        alert(data);
     });
     var temp;
     // var catlist = '{"list_categories":[{"id":1, "name":"Литература"},{"id":2, "name":"Программирование"}]}list_first:[{id:1, name:”Программист”, image:”https://sun9-57.userapi.com/T-_ZXCyq66z03gYjCpz16TolzLxmFO_a-y9aOg/YgpiNWAd-P8.jpg”},{id:2, name:”Программист”, image:”https://sun9-57.userapi.com/T-_ZXCyq66z03gYjCpz16TolzLxmFO_a-y9aOg/YgpiNWAd-P8.jpg”}]';
