@@ -160,7 +160,7 @@ function selectMenu(){
 
 function directToProgress(){
     $(".card_slot").click(function(){
-        var progressref = "./progress.html";
+        var progressref = "/../../User/Progress";
         $("body").fadeOut(1000);
         redirectPage(progressref);
     });
