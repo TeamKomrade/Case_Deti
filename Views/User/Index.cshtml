@@ -1,131 +1,150 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="~/css/Main.css">
+    <link rel="stylesheet" href="Styles/Main.css">
     <meta charset="UTF-8">
     <title>ХакаЧто?</title>
+    <script src="~/js/scripts.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
-<body>
-    <img src="~/Images/текстура бумаги 17 проц.jpg" height="auto" width="auto" class="texture">
-    <div class="profile">
-        <div class="user_profile">
-            <div class="info">
-                <div id="lvl">
-                    13
-                </div>
-                <div id="user_name">
-                    Сергей
-                </div>
+<body onload="selectMenu()">
+<img src="Images\текстура бумаги 17 проц.jpg" height="auto" width="auto" class="texture">
+<div class="profile">
+    <div class="user_profile">
+        <div class="info">
+            <div id="lvl">
+                13
             </div>
-            <div class="user_image"></div>
-            <div class="latest_achievements_title">
-                Последние Достижения
-            </div>
-            <div class="latest_achievements">
-                <div class="achievement">
-                    <div class="achievement_icon">
-                        <img src="~/Images/kot.png" width="80%" height="80%">
-                    </div>
-                    <div class="achievement_title">
-                        Сделать Бэкэнд
-                    </div>
-                </div>
-                <div class="achievement">
-                    <div class="achievement_icon">
-                        <img src="~/Images/kot.png" width="80%" height="80%">
-                    </div>
-                    <div class="achievement_title">
-                        Сделать Бэкэнд
-                    </div>
-                </div>
+            <div id="user_name">
+                Сергей
             </div>
         </div>
-        <div class="menu">
-            <button class="menu_button">Мои навыки</button>
-            <button class="menu_button">Достижения</button>
-            <button class="menu_button">Мой вектор</button>
-            <button class="menu_button">Успеваемость</button>
+        <div class="user_image"></div>
+        <div class="latest_achievements_title">
+            Последние Достижения
         </div>
-        <div class="achievement_list">
-            <button class="menu_back">
-                <img src="~/Images/back-arrow.png" width="75%" height="75%" id="arrow_color">
-            </button>
+        <div class="latest_achievements">
             <div class="achievement">
                 <div class="achievement_icon">
-                    <img src="~/Images/kot.png" width="80%" height="80%">
+                    <img src="Images\kot.png" width="80%" height="80%">
                 </div>
-                <div class="achievement_text">
-                    <div class="achievement_title">
-                        Сделать Бэкэнд
-                    </div>
-                    <div class="achievement_description">
-                        Выполнить задание для проекта
-                    </div>
+                <div class="achievement_title">
+                    Сделать Бэкэнд
                 </div>
             </div>
             <div class="achievement">
                 <div class="achievement_icon">
-                    <img src="~/Images/kot.png" width="80%" height="80%">
+                    <img src="Images\kot.png" width="80%" height="80%">
                 </div>
-                <div class="achievement_text">
-                    <div class="achievement_title">
-                        Сделать Бэкэнд
-                    </div>
-                    <div class="achievement_description">
-                        Выполнить задание для проекта
-                    </div>
+                <div class="achievement_title">
+                    Сделать Бэкэнд
                 </div>
             </div>
-            <div class="achievement">
-                <div class="achievement_icon">
-                    <img src="~/Images/kot.png" width="80%" height="80%">
-                </div>
-                <div class="achievement_text">
-                    <div class="achievement_title">
-                        Сделать Бэкэнд
-                    </div>
-                    <div class="achievement_description">
-                        Выполнить задание для проекта
-                    </div>
-                </div>
-            </div>
-            <div class="achievement">
-                <div class="achievement_icon">
-                    <img src="~/Images/kot.png" width="80%" height="80%">
-                </div>
-                <div class="achievement_text">
-                    <div class="achievement_title">
-                        Сделать Бэкэнд
-                    </div>
-                    <div class="achievement_description">
-                        Выполнить задание для проекта
-                    </div>
-                </div>
-            </div>
-            <div class="achievement">
-                <div class="achievement_icon">
-                    <img src="~/Images/kot.png" width="80%" height="80%">
-                </div>
-                <div class="achievement_text">
-                    <div class="achievement_title">
-                        Сделать Бэкэнд
-                    </div>
-                    <div class="achievement_description">
-                        Выполнить задание для проекта
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="skills_list">
-            <button class="menu_back">
-                <img src="~/Images/back-arrow.png" width="75%" height="75%" id="arrow_color">
-            </button>
-            <div class="skill_item">Совсем никак в голове</div>
-            <div class="skill_item">Совсем никак в голове</div>
-            <div class="skill_item">Совсем никак в голове</div>
-            <div class="skill_item">Совсем никак в голове</div>
-            <div class="skill_item">Совсем никак в голове</div>
         </div>
     </div>
+    <div class="menu">
+        <button class="menu_button" value="1" >Мои навыки</button>
+        <button class="menu_button" value="2" >Достижения</button>
+        <button class="menu_button" value="3">Мой вектор</button>
+        <button class="menu_button"value="4">Успеваемость</button>
+        <button class="menu_button" value="5" >Рейтинг</button>
+    </div>
+    <div class="achievement_list">
+        <button class="menu_back">
+            <img src="Images\back-arrow.png" width="75%" height="75%" id="arrow_color">
+        </button>
+        <div class="achievement">
+            <div class="achievement_icon">
+                <img src="Images\kot.png" width="80%" height="80%">
+            </div>
+            <div class="achievement_text">
+                <div class="achievement_title">
+                    Сделать Бэкэнд
+                </div>
+                <div class="achievement_description">
+                    Выполнить задание для проекта
+                </div>
+            </div>
+        </div>
+        <div class="achievement">
+            <div class="achievement_icon">
+                <img src="Images\kot.png" width="80%" height="80%">
+            </div>
+            <div class="achievement_text">
+                <div class="achievement_title">
+                    Сделать Бэкэнд
+                </div>
+                <div class="achievement_description">
+                    Выполнить задание для проекта
+                </div>
+            </div>
+        </div>
+        <div class="achievement">
+            <div class="achievement_icon">
+                <img src="Images\kot.png" width="80%" height="80%">
+            </div>
+            <div class="achievement_text">
+                <div class="achievement_title">
+                    Сделать Бэкэнд
+                </div>
+                <div class="achievement_description">
+                    Выполнить задание для проекта
+                </div>
+            </div>
+        </div>
+        <div class="achievement">
+            <div class="achievement_icon">
+                <img src="Images\kot.png" width="80%" height="80%">
+            </div>
+            <div class="achievement_text">
+                <div class="achievement_title">
+                    Сделать Бэкэнд
+                </div>
+                <div class="achievement_description">
+                    Выполнить задание для проекта
+                </div>
+            </div>
+        </div>
+        <div class="achievement">
+            <div class="achievement_icon">
+                <img src="Images\kot.png" width="80%" height="80%">
+            </div>
+            <div class="achievement_text">
+                <div class="achievement_title">
+                    Сделать Бэкэнд
+                </div>
+                <div class="achievement_description">
+                    Выполнить задание для проекта
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="skills_list">
+        <button class="menu_back">
+            <img src="Images\back-arrow.png" width="75%" height="75%" id="arrow_color">
+        </button>
+        <div class="skill_item">Совсем никак в голове</div>
+        <div class="skill_item">Совсем никак в голове</div>
+        <div class="skill_item">Совсем никак в голове</div>
+        <div class="skill_item">Совсем никак в голове</div>
+        <div class="skill_item">Совсем никак в голове</div>
+    </div>
+    <div class="vector">
+        <button class="menu_back">
+            <img src="Images\back-arrow.png" width="75%" height="75%" id="arrow_color">
+        </button>
+        <button class="vector_item">
+            <div class="vector_item_title">
+                "3D моделирование"
+            </div>
+            <div class="vector_item_saved">
+                Сохранено: 12.06.20
+            </div>
+        </button>
+        <button class="vector_item" disabled>Пустой слот</button>
+        <button class="vector_item" disabled>Пустой слот</button>
+        <button class="search_vector">Найти вектор</button>
+    </div>
+</div>
 </body>
 </html>
