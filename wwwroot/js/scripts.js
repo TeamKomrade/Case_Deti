@@ -122,7 +122,7 @@ function startDirecting(){
 function selectMenu(){
     $('.menu_button').click(function(){
         var htmlcont = $(this).html();
-        alert(htmlcont);
+        // alert(htmlcont);
         if(htmlcont == "Достижения"){
 
             $('.achievement_list').css("display","flex");
@@ -139,6 +139,14 @@ function selectMenu(){
             $('.menu').css("display","none");
             $('.menu_back').click(function(){
                 $('.skills_list').css("display","none");
+                $('.menu').css("display","flex");
+            });
+        } else if(htmlcont == "Мои курсы"){
+
+            $('.vector').css("display","flex");
+            $('.menu').css("display","none");
+            $('.menu_back').click(function(){
+                $('.vector').css("display","none");
                 $('.menu').css("display","flex");
             });
         }
