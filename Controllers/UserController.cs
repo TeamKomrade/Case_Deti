@@ -123,7 +123,7 @@ namespace Case_Deti.Controllers
                 }
                 else ModelState.AddModelError("", "Такой пользователь уже есть в базе данных");
             }
-            return View(model);
+            return RedirectToAction("Login","User");
         }
 
         [HttpPost]
