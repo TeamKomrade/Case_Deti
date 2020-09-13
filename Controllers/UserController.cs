@@ -94,6 +94,12 @@ namespace Case_Deti.Controllers
             return View();
         }
 
+        [HttpGet]
+        public IActionResult Rating()
+        {
+            return View();
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterModel model)
