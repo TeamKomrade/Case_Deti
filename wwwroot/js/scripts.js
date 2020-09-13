@@ -70,7 +70,7 @@ function SaveTheme(activeClass) {
     localStorage.setItem("theme", activeClass);
 }
 function UpdProfile(){
-    var profjson = '{"id":1, "name":"Иван", "image":"https://sun9-56.userapi.com/LxtHVb96HUT6RwiIlhXbQ863pdsL78eCRZBHIQ/2KEw_yNSofk.jpg"}';
+    var profjson = '{"id":1, "name":"Сергей", "image":"https://sun9-56.userapi.com/LxtHVb96HUT6RwiIlhXbQ863pdsL78eCRZBHIQ/2KEw_yNSofk.jpg"}';
     profdata = JSON.parse(profjson);
     $('.information').css('background','url('+profdata.image+')');
     $('#nickname_text').html(profdata.name);
