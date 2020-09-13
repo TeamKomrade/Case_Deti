@@ -391,6 +391,11 @@ html, body {
     text-align: center;
 }
 
+.skills_container {
+    height: 100px;
+    width: 50px;
+}
+
 .skills_icon {
     height: 50%;
     width: 100%;
