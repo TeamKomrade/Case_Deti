@@ -27,6 +27,12 @@ $(document).ready(function() {
 
 function Update(){
     UpdProfile();
+    $.getJSON('https://case-deti.herokuapp.com/api/Categories', function(data) {
+        // $.each(data, function(key, val) {
+        //     $('#countries').append('<option value="' + val + '">' + key + '</option>');
+        // });
+        log(data)
+    });
     var temp;
     // var catlist = '{"list_categories":[{"id":1, "name":"Литература"},{"id":2, "name":"Программирование"}]}list_first:[{id:1, name:”Программист”, image:”https://sun9-57.userapi.com/T-_ZXCyq66z03gYjCpz16TolzLxmFO_a-y9aOg/YgpiNWAd-P8.jpg”},{id:2, name:”Программист”, image:”https://sun9-57.userapi.com/T-_ZXCyq66z03gYjCpz16TolzLxmFO_a-y9aOg/YgpiNWAd-P8.jpg”}]';
     var catlist = '[{"id":1, "name":"Программирование","list_profession":[{"id":1, "name":"Программирование.1", "image":"https://sun9-57.userapi.com/T-_ZXCyq66z03gYjCpz16TolzLxmFO_a-y9aOg/YgpiNWAd-P8.jpg"},{"id":2, "name":"Прогр.2", "image":"https://sun9-57.userapi.com/T-_ZXCyq66z03gYjCpz16TolzLxmFO_a-y9aOg/YgpiNWAd-P8.jpg"}]},{"id":2, "name":"Литература","list_profession":[{"id":3, "name":"Литр1", "image":"https://sun9-57.userapi.com/T-_ZXCyq66z03gYjCpz16TolzLxmFO_a-y9aOg/YgpiNWAd-P8.jpg"},{"id":4, "name":"Литр2", "image":"https://sun9-57.userapi.com/T-_ZXCyq66z03gYjCpz16TolzLxmFO_a-y9aOg/YgpiNWAd-P8.jpg"}]}]';
