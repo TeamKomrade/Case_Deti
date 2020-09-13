@@ -60,7 +60,7 @@ namespace Case_Deti.Controllers
 
                 var profession = new Data.Profession()
                 {
-                    Name = "test prof",
+                    Name = "Программист",
                     ImgURL = @"https://sun9-29.userapi.com/1-WgAmlkOwd-1_sW7Wp_uUlWFEjHdkAsZLxiLg/JCI0QEBnKX8.jpg",
                     ProfessionID = 0
                 };
@@ -68,7 +68,7 @@ namespace Case_Deti.Controllers
                 var category = new Data.Category()
                 {
                     ImgURL = @"https://sun9-29.userapi.com/1-WgAmlkOwd-1_sW7Wp_uUlWFEjHdkAsZLxiLg/JCI0QEBnKX8.jpg",
-                    Name = "test cat",
+                    Name = "Информационные технологии",
                     CategoryID = 0
                 };
 
@@ -76,10 +76,39 @@ namespace Case_Deti.Controllers
 
                 var course = new Data.Course()
                 {
-                    
+                    Name = "Изучение основ Java",
+                    Address = "ул. Пушкина д. 10а",
+                    ApproxTime = "15",
+                    DifficultyLevel = "2",
+                    ImgURL = "http://www.juntech.ru/sites/default/files/inline-images/java.png",
+                    Info = "На занятиях этого направления Вы:\n"+
+                    "- познакомитесь с синтаксисом языка;\n"+
+                    "- рассмотрите элементы объектно-ориентированного программирования;\n" +
+                    "- поработаете с данными и алгоритмами;\n" +
+                    "- изучите графику и интерфейсы;\n" +
+                    "-освоите один из самых популярных языков.\n\n" +
+                    "Рекомендовано для 12 - 18 лет.\n",
+                    ScheduleList = new List<Schedule>()
+                    { 
+                        new Schedule() 
+                        {
+                            Marker = "ПН-ПТ",
+                            Time = "15:30"
+                        },
+                        new Schedule()
+                        {
+                            Marker = "СБ",
+                            Time = "12:10"
+                        }
+                    },
                 };
 
-
+                var skill = new Skill()
+                {
+                    Name = "Программирование"
+                };
+                _db.ProfessionCourses.Add(new ProfessionCourse() { Profession = profession, Course = course });
+                _db.CourseSkills.Add(new CourseSkills() { Course = course, Skill = skill });
                 _db.Users.Add(admin);
                 await _db.SaveChangesAsync();
             };
