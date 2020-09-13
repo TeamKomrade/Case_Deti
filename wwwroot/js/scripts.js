@@ -27,42 +27,43 @@ $(document).ready(function() {
 
 function Update(){
     UpdProfile();
-    $.getJSON('https://case-deti.herokuapp.com/api/Categories', function(data) {
+    $.getJSON('https://case-deti.herokuapp.com/api/Categories', function(catlist) {
         // $.each(data, function(key, val) {
         //     $('#countries').append('<option value="' + val + '">' + key + '</option>');
         // });
-        alert(data);
+        // var catlist = '[{"id":1, "name":"Программирование","list_profession":[{"id":1, "name":"Программирование.1", "image":"https://sun9-57.userapi.com/T-_ZXCyq66z03gYjCpz16TolzLxmFO_a-y9aOg/YgpiNWAd-P8.jpg"},{"id":2, "name":"Прогр.2", "image":"https://sun9-57.userapi.com/T-_ZXCyq66z03gYjCpz16TolzLxmFO_a-y9aOg/YgpiNWAd-P8.jpg"}]},{"id":2, "name":"Литература","list_profession":[{"id":3, "name":"Литр1", "image":"https://sun9-57.userapi.com/T-_ZXCyq66z03gYjCpz16TolzLxmFO_a-y9aOg/YgpiNWAd-P8.jpg"},{"id":4, "name":"Литр2", "image":"https://sun9-57.userapi.com/T-_ZXCyq66z03gYjCpz16TolzLxmFO_a-y9aOg/YgpiNWAd-P8.jpg"}]}]';
+        alert("")
+        var data = JSON.parse(catlist);
+                $('.selected_skills').empty();
+        data.forEach(function (item){
+
+                let div = document.createElement('div');
+                div.addEventListener("click",function(){
+                    $('.carousel').empty();
+                    item.professions.forEach(function(item2)  {
+                        let cardo = document.createElement('div');
+                        cardo.className="card";
+                        cardo.innerHTML='<div class="card_image" style="background-image: url('+item2.imgURL+');">'+'<div class="card_text">'+'<div id="card_text">'+item2.name+'</div>'+'</div>'+'</div>';    // alert(item2.name);
+                        $('.carousel').append(cardo);
+
+                        cardo.addEventListener("click", function(){
+                            var courseref = "/../../Home/Courses";
+
+                            $("body").fadeOut(1000);
+                            redirectPage(courseref);
+                        });
+
+                    });
+                });
+                div.className = "skill";
+                div.innerHTML = '<div id="skill_text">'+item.name+'</div>' ;   // alert("goga");
+                $('.selected_skills').append(div);
+            }
+        );
     });
     var temp;
     // var catlist = '{"list_categories":[{"id":1, "name":"Литература"},{"id":2, "name":"Программирование"}]}list_first:[{id:1, name:”Программист”, image:”https://sun9-57.userapi.com/T-_ZXCyq66z03gYjCpz16TolzLxmFO_a-y9aOg/YgpiNWAd-P8.jpg”},{id:2, name:”Программист”, image:”https://sun9-57.userapi.com/T-_ZXCyq66z03gYjCpz16TolzLxmFO_a-y9aOg/YgpiNWAd-P8.jpg”}]';
-    var catlist = '[{"id":1, "name":"Программирование","list_profession":[{"id":1, "name":"Программирование.1", "image":"https://sun9-57.userapi.com/T-_ZXCyq66z03gYjCpz16TolzLxmFO_a-y9aOg/YgpiNWAd-P8.jpg"},{"id":2, "name":"Прогр.2", "image":"https://sun9-57.userapi.com/T-_ZXCyq66z03gYjCpz16TolzLxmFO_a-y9aOg/YgpiNWAd-P8.jpg"}]},{"id":2, "name":"Литература","list_profession":[{"id":3, "name":"Литр1", "image":"https://sun9-57.userapi.com/T-_ZXCyq66z03gYjCpz16TolzLxmFO_a-y9aOg/YgpiNWAd-P8.jpg"},{"id":4, "name":"Литр2", "image":"https://sun9-57.userapi.com/T-_ZXCyq66z03gYjCpz16TolzLxmFO_a-y9aOg/YgpiNWAd-P8.jpg"}]}]';
-    var data = JSON.parse(catlist);
-    $('.selected_skills').empty();
-    data.forEach(function (item){
 
-            let div = document.createElement('div');
-            div.addEventListener("click",function(){
-                $('.carousel').empty();
-                item.list_profession.forEach(function(item2)  {
-                    let cardo = document.createElement('div');
-                    cardo.className="card";
-                    cardo.innerHTML='<div class="card_image" style="background-image: url('+item2.image+');">'+'<div class="card_text">'+'<div id="card_text">'+item2.name+'</div>'+'</div>'+'</div>';    // alert(item2.name);
-                    $('.carousel').append(cardo);
-
-                    cardo.addEventListener("click", function(){
-                        var courseref = "/../../Home/Courses";
-
-                        $("body").fadeOut(1000);
-                        redirectPage(courseref);
-                    });
-
-                });
-            });
-            div.className = "skill";
-            div.innerHTML = '<div id="skill_text">'+item.name+'</div>' ;   // alert("goga");
-            $('.selected_skills').append(div);
-        }
-    );
 
 }
 
