@@ -3,8 +3,8 @@
 $(document).ready(function(){
     $("body").css("display", "none");
     $(".start_button").click(function(event){
-        $('.start').fadeOut(1000);
-        $(".select").fadeIn(2000);
+        $('.start').fadeOut(0);
+        $(".select").fadeIn(1000);
         event.preventDefault();
         $('.select').css('display','flex');
 
