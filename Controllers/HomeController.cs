@@ -67,7 +67,7 @@ namespace Case_Deti.Controllers
 
                 var profession1 = new Data.Profession()
                 {
-                    Name = "Специалист по VR и AR",
+                    Name = "Специалист по VR",
                     ImgURL = @"https://sun9-29.userapi.com/1-WgAmlkOwd-1_sW7Wp_uUlWFEjHdkAsZLxiLg/JCI0QEBnKX8.jpg",
                     ProfessionID = 0
                 };
