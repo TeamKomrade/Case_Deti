@@ -1,33 +1,58 @@
-﻿@model LoginModel
-
-<!DOCTYPE html>
-
-<html>
+﻿<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Войти</title>
+    <link rel="stylesheet" href="Styles/Main.css">
+    <meta charset="UTF-8">
+    <title>ХакаЧто?</title>
+    <script src="~js/signscript.js"></script>
+    <script src="~/js/scripts.js"></script>
+    <script src="~/lib/jquery/dist/jquery.js"> </script>
 </head>
-<body class="page_main">
-    <div class="validation" asp-validation-summary="ModelOnly"></div>
+<body onload="startDirecting()">
 
-    <form asp-action="Login" asp-controller="User" asp-anti-forgery="true">
-        <table>
-            <tr>
-                <td><label asp-for="Login"></label></td>
-                <td><input asp-for="Login"></td>
-                <td><span asp-validation-for="Login" class="text-danger"></span></td>
-            </tr>
-            <tr>
-                <td><label asp-for="Password"></label></td>
-                <td> <input asp-for="Password"></td>
-                <td><span asp-validation-for="Password" class="text-danger"></span></td>
-            </tr>
-        </table>
-        <button type="submit">Войти</button>
-    </form>
+<img src="Images\текстура бумаги 17 проц.jpg" height="auto" width="auto" class="texture">
+<div class="sign_in_up">
+    <div class="sign_in">
+        <div class="tab_buttons">
+            <button  class="sign_button" onclick="UpdateReg()">РЕГИСТРАЦИЯ</button>
+            <button  class="sign_button" disabled>ВХОД</button>
+        </div>
+        <div class="input_fields">
+            <div class="field">
+                Логин <input class="enter_area"></input>
+            </div>
+            <div class="field">
+                Пароль <input class="enter_area" type="password"></input>
+            </div>
+        </div>
+        <button class="login_button" href="./start.html" onclick="redirectPage(this.href)">ВОЙТИ</button>
+    </div>
+    <div class="sign_up">
+        <div class="tab_buttons">
+            <button class="sign_button" disabled>РЕГИСТРАЦИЯ</button>
+            <button class="sign_button" onclick="UpdateLogin()">ВХОД</button>
+        </div>
+        <div class="input_fields">
+            <div class="field">
+                ФИО <input class="enter_area"></input>
+            </div>
+            <div class="two_fields">
+                <div class="field">
+                    Возраст <input class="enter_area"></input>
+                </div>
+                <div class="field">
+                    Пол <input class="enter_area"></input>
+                </div>
+            </div>
+            <div class="field">
+                Логин <input class="enter_area"></input>
+            </div>
+            <div class="field">
+                Пароль <input class="enter_area" type="password"></input>
+            </div>
+        </div>
+        <button class="login_button" href="./start.html" onclick="redirectPage(this.href)">Регистрация</button>
+    </div>
+</div>
 </body>
 </html>
-
-@section Scripts {
-    <partial name="_ValidationScriptsPartial" />
-}

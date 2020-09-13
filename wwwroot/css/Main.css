@@ -112,13 +112,13 @@ html, body {
     user-select: none;
 }
 
-    .start_text:active {
-        height: 460px;
-        width: 460px;
-        border: 5px rgb(68, 155, 224) solid;
-        background: rgb(23, 36, 78);
-        color: rgb(68, 155, 224);
-    }
+.start_text:active {
+    height: 460px;
+    width: 460px;
+    border: 5px rgb(68, 155, 224) solid;
+    background: rgb(23, 36, 78);
+    color: rgb(68, 155, 224);
+}
 
 .texture {
     z-index: 999;
@@ -219,9 +219,9 @@ html, body {
     cursor: pointer;
 }
 
-    .skill:disabled {
-        color: rgba(68, 155, 224, 0.5);
-    }
+.skill:disabled {
+    color: rgba(68, 155, 224, 0.5);
+}
 
 #skill_text {
     color: rgb(23, 36, 78);
@@ -375,7 +375,7 @@ html, body {
     justify-content: space-between;
 }
 
-.text_stroke {
+.text_stroke{
     color: white;
     text-shadow: black 1px 0px, black 1px 1px, black 0px 1px, black -1px 1px, black -1px 0px, black -1px -1px, black 0px -1px, black 1px -1px;
 }
@@ -454,6 +454,7 @@ html, body {
     font-size: 20px;
     font-family: "Lucida Console";
     font-style: oblique;
+
 }
 
 .description {
@@ -515,9 +516,9 @@ html, body {
     overflow-x: auto;
 }
 
-    .phases div:first-child {
-        margin-left: 5%;
-    }
+.phases div:first-child {
+    margin-left: 5%;
+}
 
 .course_button div:first-child {
     margin-left: 0;
@@ -537,12 +538,12 @@ html, body {
     cursor: pointer;
 }
 
-    .course_button:disabled {
-        width: 260px;
-        height: 260px;
-        border: 5px rgb(68, 155, 224) solid;
-        cursor: default;
-    }
+.course_button:disabled {
+    width: 260px;
+    height: 260px;
+    border: 5px rgb(68, 155, 224) solid;
+    cursor: default;
+}
 
 .image_border {
     width: 240px;
@@ -602,9 +603,9 @@ html, body {
     cursor: pointer;
 }
 
-    .back_to_profile:hover {
-        background: rgba(255, 255, 255, 0.5);
-    }
+.back_to_profile:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
 
 .profile_nickname {
     color: white;
@@ -621,6 +622,195 @@ html, body {
     background: url("https://sun9-56.userapi.com/LxtHVb96HUT6RwiIlhXbQ863pdsL78eCRZBHIQ/2KEw_yNSofk.jpg") no-repeat;
     background-size: 100% 100%;
     margin-left: 25px;
+}
+
+
+
+.progress {
+    width: 100%;
+    height: 100%;
+    background: #e4e4d4;
+    display: flex;
+}
+
+#progress_title {
+    top: 5%;
+    left: 10%;
+    color: rgb(23, 36, 78);
+    font-size: 64px;
+    position: absolute;
+}
+
+.progress_map {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+#horizontal {
+    transform: rotate(90deg);
+}
+
+#map_circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#progress_start {
+    background: rgb(23, 36, 78);
+    height: 400px;
+    width: 400px;
+    border-radius: 50%;
+    border: 10px rgb(23, 36, 78) solid;
+    z-index: 2;
+    transform: rotate(90deg);
+}
+
+#first_circle {
+    background: none;
+    height: 380px;
+    width: 380px;
+    border-radius: 50%;
+    border: 10px solid white;
+}
+
+#second_circle {
+    background: rgb(68, 155, 224);
+    border: 5px rgb(23, 36, 78) solid;
+    border-radius: 50%;
+    height: 370px;
+    width: 370px;
+}
+
+#start_text {
+    color: rgb(23, 36, 78);
+    font-size: 64px;
+    font-weight: bold;
+    font-family: "Lucida Console";
+    height: 360px;
+    width: 360px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+}
+
+#rectangle {
+    background: rgb(23, 36, 78);
+    width: calc(100% - 140px);
+    height: 280px;
+    position: absolute;
+    right: 0;
+    top: calc(50% - 140px);
+    z-index: 1;
+}
+
+#line {
+    background: white;
+    position: absolute;
+    width: 90px;
+    height: 10px;
+    right: calc(100% - 500px);
+    top: calc(50% - 5px);
+    z-index: 3;
+}
+
+#lesson_title {
+    bottom: 5%;
+    right: 10%;
+    color: white;
+    font-family: "Lucida Console";
+    font-size: 56px;
+    margin-top: 60%;
+    margin-left: 20%;
+    text-wrap: normal;
+    position: absolute;
+    text-align: right;
+}
+
+.lessons {
+    position: absolute;
+    top: calc(50% - 140px);
+    bottom: calc(50% - 140px);
+    left: 500px;
+    right: 0;
+    z-index: 4;
+    display: flex;
+    align-items: center;
+}
+
+.lesson {
+    width: 250px;
+    height: 250px;
+    background: white;
+    margin-right: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.peoples_number {
+    margin-top: -25%;
+    background: darkgreen;
+    width: 50px;
+    height: 25px;
+    border-radius: 45%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.scores {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: right;
+    align-items: flex-end;
+    width: 100%;
+    height: 100%;
+}
+
+.score {
+    font-size: 128px;
+    color: rgb(23, 36, 78);
+    font-weight: bold;
+    font-family: "Lucida Console";
+    border: none;
+    text-align: center;
+    width: 150px;
+    height: 150px;
+    margin-right: calc(35% - 75px);
+    margin-bottom: calc(50% - 75px);
+    border-radius: 50%;
+    cursor: pointer;
+    background: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.score:disabled {
+    border: 5px rgb(23, 36, 78) solid;
+    cursor: default;
+}
+
+.average_score {
+    color: rgb(23, 36, 78);
+    font-size: 20px;
+    width: 15%;
+    font-weight: bold;
+    text-align: right;
+}
+
+#current_place {
+    width: 150px;
+    height: 150px;
+    background: darkred;
+    border-radius: 50%;
 }
 
 
@@ -721,10 +911,10 @@ html, body {
 .menu {
     position: absolute;
     right: 5%;
-    height: 50%;
+    height: 60%;
     width: 33%;
     background: #E9D6B0;
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -735,7 +925,7 @@ html, body {
     cursor: pointer;
     background: none;
     margin-bottom: 5%;
-    height: 15%;
+    height: 12.5%;
     border: 5px solid black;
     font-size: 36px;
     font-family: "Lucida Console";
@@ -744,9 +934,9 @@ html, body {
     justify-content: center;
 }
 
-    .menu_button:last-child {
-        margin-bottom: 0;
-    }
+.menu_button:last-child {
+    margin-bottom: 0;
+}
 
 .achievement_list {
     background: #E7D4AF;
@@ -806,6 +996,232 @@ html, body {
     height: 50px;
 }
 
+.vector {
+    background: #E7D4AF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 7.5%;
+    height: 70%;
+    width: 28%;
+    border-radius: 5%;
+    overflow: hidden;
+    flex-direction: column;
+}
+
+.vector_item {
+    width: 90%;
+    height: 17.5%;
+    cursor: pointer;
+    background: none;
+    margin-bottom: 5%;
+    border: 2px solid black;
+    font-size: 24px;
+    font-family: "Lucida Console";
+    display: flex;
+    justify-content: space-between;
+}
+
+.vector_item_title {
+    margin-top: 5%;
+    margin-left: 5%;
+}
+
+.vector_item_saved {
+    color: rgba(255, 255, 255, 0.75);
+    align-self: flex-end;
+}
+
+.vector_item:disabled {
+    cursor: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.search_vector {
+    width: 90%;
+    height: 17.5%;
+    cursor: pointer;
+    background: none;
+    margin-bottom: 5%;
+    border: 2px solid black;
+    font-size: 24px;
+    font-family: "Lucida Console";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.courses_list {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    background: #e4e4d4;
+}
+
+/*.tabs {*/
+/*    position: absolute;*/
+/*    bottom: 90%;*/
+/*    left: 5%;*/
+/*}*/
+
+/*.tab {*/
+/*    border: none;*/
+/*    background: none;*/
+/*    padding: 10px;*/
+/*    font-size: 24px;*/
+/*    font-family: "Lucida Console";*/
+/*    color: #2C2D26;*/
+/*    border-left: 5px solid #A99572;*/
+/*    border-right: 5px solid #A99572;*/
+/*    border-top: 5px solid #A99572;*/
+/*    border-top-right-radius: 25px;*/
+/*    border-top-left-radius: 25px;*/
+/*}*/
+
+/*.tab:disabled {*/
+/*    padding-left: 15px;*/
+/*    padding-top: 15px;*/
+/*    padding-right: 15px;*/
+/*    border-right: 5px solid #988159;*/
+/*    border-top: 5px solid #988159;*/
+/*    border-left: 5px solid #988159;*/
+/*    border-bottom: none;*/
+/*    border-top-right-radius: 25px;*/
+/*    border-top-left-radius: 25px;*/
+/*}*/
+
+.card_list {
+    border-top: 5px solid #988159;
+    height: 90%;
+    width: 100%;
+    background: #E5D2AA;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.card_slot {
+    width: 21%;
+    height: 60%;
+    margin-top: 2.5%;
+    background: #E5D2AA;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.card_slot_texture {
+    background: rgba(255, 255, 255, 0.1);
+    border-right: 2px rgba(255, 255, 255, 0.3) solid;
+    border-bottom: 2px rgba(255, 255, 255, 0.3) solid;
+    border-left: 2px rgba(255, 255, 255, 0.3) solid;
+    z-index: 3;
+    width: inherit;
+    height: 54%;
+    position: fixed;
+}
+
+.card_item {
+    width: 95%;
+    height: 95%;
+    background: url("https://sun9-10.userapi.com/gdGMJCASruPs15MxNEao89erNDU-hw6aSNHtJw/aQcHKzzun3c.jpg") no-repeat;
+    background-size: 100% 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 5%;
+    z-index: 1;
+}
+
+#card_title {
+    font-family: "Lucida Console";
+    font-size: 30px;
+    text-transform: uppercase;
+    font-style: oblique;
+}
+
+#skills_number {
+    font-size: 18px;
+    font-family: "Lucida Console";
+}
+
+.top {
+    margin-top: 2.5%;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-around;
+}
+
+.bottom_card {
+    margin-bottom: 2.5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.schedule_items {
+    margin-right: 2.5%;
+    width: 50%;
+    display: flex;
+    align-self: flex-end;
+    flex-direction: column;
+}
+
+.schedule_item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.schedule_item_time {
+    background: linear-gradient(to right, rgb(68, 155, 224), rgb(35, 77, 113));
+    padding: 5px 10px 5px 25px;
+    border: 1px rgb(23, 36, 78) solid;
+    border-radius: 15px;
+    width: 60%;
+    text-align: right;
+    font-style: oblique;
+}
+
+.schedule_item_day {
+    font-style: oblique;
+}
+
+#card_description {
+    border-radius: 15px;
+    border: 1px black solid;
+    background: white;
+    padding: 5px;
+    margin: 2.5%;
+    text-align: center;
+    font-family: "Lucida Console";
+}
+
+.bottom_items {
+    display: flex;
+    justify-content: space-around;
+}
+
+#address {
+    font-size: 24px;
+    font-family: "Lucida Console";
+    font-style: oblique;
+}
+
+#difficulty {
+    font-size: 18px;
+    font-family: "Lucida Console";
+    text-transform: uppercase;
+}
+
+
 
 
 .sign_in_up {
@@ -849,12 +1265,12 @@ html, body {
     user-select: none;
 }
 
-    .sign_button:disabled {
-        border-bottom: 5px black solid;
-        cursor: default;
-        padding-left: 5%;
-        padding-right: 5%;
-    }
+.sign_button:disabled {
+    border-bottom: 5px black solid;
+    cursor: default;
+    padding-left: 5%;
+    padding-right: 5%;
+}
 
 .input_fields {
     width: 100%;
@@ -900,9 +1316,9 @@ html, body {
     cursor: pointer;
 }
 
-    .login_button:active {
-        font-weight: bold;
-    }
+.login_button:active {
+    font-weight: bold;
+}
 
 .sign_up {
     height: 40%;
@@ -921,4 +1337,143 @@ html, body {
     justify-content: space-between;
     align-items: baseline;
     margin: 2.5% 0;
+}
+
+
+
+.rating {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e4e4d4;
+}
+
+.top1 {
+    height: 90%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.top1_user_profile {
+    left: 15%;
+    height: 54%;
+    width: 22.5%;
+    background: white;
+    border-radius: 5%;
+    overflow: hidden;
+}
+
+.top2-10 {
+    height: 54%;
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#points {
+    color: #E1E3E9;
+    border-radius: 50%;
+    border: 5px solid #E1E3E9;
+    font-size: 28px;
+    font-family: "Lucida Console";
+    width: 15%;
+    height: 75%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#top1_user_name {
+    color: #E1E3E9;
+    font-size: 36px;
+    font-family: "Lucida Console";
+    font-weight: bold;
+}
+
+.top1_latest_achievement_title {
+    width: 100%;
+    height: 10%;
+    background: #459AAF;
+    border-bottom: 5px solid #2C2D26;
+    color: #604E49;
+    font-family: "Lucida Console";
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.top2-10_item {
+    margin: 4% 2.5%;
+    height: 15%;
+    width: 25%;
+    background: white;
+    border: 5px rgb(23, 36, 78) solid;
+    color: rgb(23, 36, 78);
+    display: flex;
+    align-items: center;
+    font-family: "Lucida Console";
+    font-size: 20px;
+}
+
+.top2-10_item_user_name {
+    width: 100%;
+    color: rgb(23, 36, 78);
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.top2-10_item_points {
+    text-align: right;
+    color: #2C2D26;
+    font-size: 20px;
+}
+
+
+
+.skills {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background: #e4e4d4;
+    flex-direction: column;
+}
+
+.skills_title {
+    font-size: 56px;
+    font-family: "Lucida Console";
+    font-weight: bold;
+}
+
+.choose_skills {
+    width: 60%;
+    height: 60%;
+    background: #E5D2AA;
+    border-radius: 25px;
+    overflow-y: auto;
+    display: block;
+    flex-wrap: wrap;
+}
+
+.choose_skills_item {
+    width: 20%;
+    height: 10%;
+    margin: 2.25%;
+    font-size: 20px;
+    font-family: "Lucida Console";
+    border: 5px solid black;
+    background: none;
 }
