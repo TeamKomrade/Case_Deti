@@ -41,8 +41,8 @@ namespace Case_Deti.Controllers
                 foreach (var ua in current_user.UserAchievements) achievements.Add(ua.Achievement);
                 var user = new UserModel()
                 {
-                    FirstName = (hasFName) ? current_user.FirstName : "Александр",
-                    LastName = (hasLName) ? current_user.LastName : "Петров",
+                    FirstName = (hasFName) ? current_user.FirstName : "Сергей",
+                    LastName = (hasLName) ? current_user.LastName : "Сергеев",
                     Achievements = achievements.ToList()
                 };
                 return View();
@@ -60,9 +60,9 @@ namespace Case_Deti.Controllers
                 };
                 var user = new UserModel()
                 {
-                    FirstName = "Александр",
-                    LastName = "Петров",
-                    MiddleName = "Игоревич",
+                    FirstName = "Сергей",
+                    LastName = "Сергеев",
+                    MiddleName = "Сергеевич",
                     Achievements = achievements,
                 };
                 return View(user);
